@@ -3,6 +3,7 @@ import "./App.css";
 import Home from "./components/pages/Home";
 import Login from "./components/pages/Login";
 import AllDoctor from "./components/pages/AllDoctor";
+import Register from "./components/pages/Register";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,14 @@ const router = createBrowserRouter([
     element: (
       <>
         <Login></Login>
+      </>
+    ),
+  },
+  {
+    path: "/register",
+    element: (
+      <>
+        <Register></Register>
       </>
     ),
   },
