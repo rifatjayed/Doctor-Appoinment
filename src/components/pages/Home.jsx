@@ -15,7 +15,7 @@ const Home = () => {
     <div className=" ">
       <div className=" min-h-screen flex flex-col">
         <Navbar></Navbar>
-        <div className="flex-1">
+        <div className="h-[calc(100vh-80px)]">
           <Hero></Hero>
         </div>
       </div>

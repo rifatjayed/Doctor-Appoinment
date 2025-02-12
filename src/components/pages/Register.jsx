@@ -5,10 +5,12 @@ const Register = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
   const onSubmit = (data) => {
+    reset();
     console.log("Register Data:", data);
   };
   return (
