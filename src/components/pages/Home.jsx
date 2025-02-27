@@ -9,14 +9,21 @@ import img5 from "../../assets/img/visibility.png";
 import img6 from "../../assets/img/heart-rate.png";
 
 import doctorList from "../../Data/db";
+import Navbar2 from "../Navbar2";
+import Hero2 from "../Hero2";
 
 const Home = () => {
   return (
     <div className=" ">
       <div className=" min-h-screen flex flex-col">
+        {/* <Navbar2></Navbar2> */}
         <Navbar></Navbar>
-        <div className="h-[calc(100vh-80px)]">
+        {/* <div className="h-[calc(100vh-80px)]">
           <Hero></Hero>
+        </div> */}
+
+        <div className="">
+          <Hero2></Hero2>
         </div>
       </div>
 

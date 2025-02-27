@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router";
 import { FaRegUser } from "react-icons/fa";
 
 import heroIcon from "../assets/img/Medinova.png";
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div className="">
       <nav className=" text-black py-4 px-6 flex justify-between items-center shadow-lg h-[80px]">
@@ -32,10 +34,34 @@ const Navbar = () => {
         </div>
 
         {/* Right Side - User Button */}
-        <Link className="flex items-center w-[30px] py-2 rounded-lg transition">
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="flex items-center w-[30px] py-2 rounded-lg transition "
+        >
           {/* <User className="w-5 h-5 mr-2" /> */}
           <FaRegUser className="text-[25px]" />
-        </Link>
+
+          {/* Dropdown Menu */}
+          {isOpen && (
+            // <div className="absolute right-0 w-48 bg-white shadow-lg rounded-lg p-2">
+            <div className="absolute right-0 w-48 bg-white shadow-lg rounded-lg p-2">
+              <ul className="text-black flex flex-col">
+                <Link className="px-3 py-2 hover:bg-gray-200 rounded-lg cursor-pointer">
+                  Profile
+                </Link>
+                <Link className="px-3 py-2 hover:bg-gray-200 rounded-lg cursor-pointer">
+                  Dashboard
+                </Link>
+                <Link
+                  to="/login"
+                  className="px-3 py-2 hover:bg-gray-200 rounded-lg cursor-pointer"
+                >
+                  Login
+                </Link>
+              </ul>
+            </div>
+          )}
+        </button>
       </nav>
     </div>
   );
