@@ -1,16 +1,16 @@
 import React from "react";
 import Navbar from "../Navbar";
-import Hero from "../Hero";
-import img1 from "../../assets/img/heart-rate.png";
-import img2 from "../../assets/img/neurology.png";
-import img3 from "../../assets/img/pulmonary.png";
-import img4 from "../../assets/img/tooth.png";
-import img5 from "../../assets/img/visibility.png";
-import img6 from "../../assets/img/heart-rate.png";
+import gynologist from "../../assets/img/gynecologist-obstetrician.webp";
+import medicine from "../../assets/img/medicine-specialist.webp";
+import cardologist from "../../assets/img/cardiologist.webp";
+import Pediatrician from "../../assets/img/pediatrician.webp";
+import genarel from "../../assets/img/general-surgeon.webp";
+import Otolaryngologist from "../../assets/img/otolaryngologists-ent.webp";
 
 import doctorList from "../../Data/db";
 import Navbar2 from "../Navbar2";
 import Hero2 from "../Hero2";
+import { Link } from "react-router";
 
 const Home = () => {
   return (
@@ -36,213 +36,62 @@ const Home = () => {
         <p className="font-medium text-black-tint-400">
           Our doctors are ready to serve you 24/7
         </p>
-        <div className="grid grid-cols-3 gap-12 mt-14">
-          {/* <div className="card w-96 bg-base-100 card-lg shadow-sm">
-            <div className="card-body">
-              <h2 className="card-title">Large Card</h2>
-              <p>
-                A card component has a figure, a body part, and inside body
-                there are title and actions parts
-              </p>
-              <div className="justify-end card-actions">
-                <button className="btn btn-primary">Buy Now</button>
-              </div>
-            </div>
+        <div className="grid grid-cols-6 gap-4 mt-14">
+          <div>
+            <img src={gynologist} alt="" />
+            <h3 className="mb-2 text-lg font-bold text-primaryColor-shade-200">
+              Gynecologist & Obstetrician
+            </h3>
+            <Link>
+              <p>Consult Now</p>
+            </Link>
           </div>
-          <div className="card w-96 bg-base-100 card-lg shadow-sm">
-            <div className="card-body">
-              <h2 className="card-title">Large Card</h2>
-              <p>
-                A card component has a figure, a body part, and inside body
-                there are title and actions parts
-              </p>
-              <div className="justify-end card-actions">
-                <button className="btn btn-primary">Buy Now</button>
-              </div>
-            </div>
-          </div>
-          <div className="card w-96 bg-base-100 card-lg shadow-sm">
-            <div className="card-body">
-              <h2 className="card-title">Large Card</h2>
-              <p>
-                A card component has a figure, a body part, and inside body
-                there are title and actions parts
-              </p>
-              <div className="justify-end card-actions">
-                <button className="btn btn-primary">Buy Now</button>
-              </div>
-            </div>
-          </div>
-          <div className="card w-96 bg-base-100 card-lg shadow-sm">
-            <div className="card-body">
-              <h2 className="card-title">Large Card</h2>
-              <p>
-                A card component has a figure, a body part, and inside body
-                there are title and actions parts
-              </p>
-              <div className="justify-end card-actions">
-                <button className="btn btn-primary">Buy Now</button>
-              </div>
-            </div>
-          </div>
-          <div className="card w-96 bg-base-100 card-lg shadow-sm">
-            <div className="card-body">
-              <h2 className="card-title">Large Card</h2>
-              <p>
-                A card component has a figure, a body part, and inside body
-                there are title and actions parts
-              </p>
-              <div className="justify-end card-actions">
-                <button className="btn btn-primary">Buy Now</button>
-              </div>
-            </div>
-          </div>
-          <div className="card w-96 bg-base-100 card-lg shadow-sm">
-            <div className="card-body">
-              <h2 className="card-title">Large Card</h2>
-              <p>
-                A card component has a figure, a body part, and inside body
-                there are title and actions parts
-              </p>
-              <div className="justify-end card-actions">
-                <button className="btn btn-primary">Buy Now</button>
-              </div>
-            </div>
-          </div> */}
 
-          <div className="max-w-sm mx-auto p-6 bg-white shadow-lg rounded-lg border border-gray-300 text-center relative">
-            {/* Icon with Border */}
-            <div className="absolute left-1/2 -top-8 transform -translate-x-1/2 bg-white p-4 rounded-full border-4 border-blue-500 shadow-md">
-              <img src={img1} alt="" srcset="" className="w-10" />
-            </div>
-
-            {/* Card Content */}
-            <div className="mt-10">
-              <h2 className="text-xl font-semibold text-gray-800">
-                Doctor Consultation
-              </h2>
-              <p className="text-gray-600 mt-2">
-                Book an appointment with expert doctors and get professional
-                health advice.
-              </p>
-            </div>
+          <div className="">
+            <img src={medicine} alt="" />
+            <h3 className="mb-2 text-lg font-bold text-primaryColor-shade-200">
+              Medicine Specialist
+            </h3>
+            <Link>
+              <p>Consult Now</p>
+            </Link>
           </div>
-          <div className="max-w-sm mx-auto p-6 bg-white shadow-lg rounded-lg border border-gray-300 text-center relative">
-            {/* Icon with Border */}
-            <div className="absolute left-1/2 -top-8 transform -translate-x-1/2 bg-white p-4 rounded-full border-4 border-blue-500 shadow-md">
-              <img src={img2} alt="" srcset="" className="w-10" />{" "}
-            </div>
-
-            {/* Card Content */}
-            <div className="mt-10">
-              <h2 className="text-xl font-semibold text-gray-800">
-                Doctor Consultation
-              </h2>
-              <p className="text-gray-600 mt-2">
-                Book an appointment with expert doctors and get professional
-                health advice.
-              </p>
-            </div>
+          <div>
+            <img src={cardologist} alt="" />
+            <h3 className="mb-2 text-lg font-bold text-primaryColor-shade-200">
+              Cardiologist
+            </h3>
+            <Link>
+              <p>Consult Now</p>
+            </Link>
           </div>
-          <div className="max-w-sm mx-auto p-6 bg-white shadow-lg rounded-lg border border-gray-300 text-center relative">
-            {/* Icon with Border */}
-            <div className="absolute left-1/2 -top-8 transform -translate-x-1/2 bg-white p-4 rounded-full border-4 border-blue-500 shadow-md">
-              <img src={img3} alt="" srcset="" className="w-10" />
-            </div>
-
-            {/* Card Content */}
-            <div className="mt-10">
-              <h2 className="text-xl font-semibold text-gray-800">
-                Doctor Consultation
-              </h2>
-              <p className="text-gray-600 mt-2">
-                Book an appointment with expert doctors and get professional
-                health advice.
-              </p>
-            </div>
+          <div>
+            <img src={Pediatrician} alt="" />
+            <h3 className="mb-2 text-lg font-bold text-primaryColor-shade-200">
+              Pediatrician
+            </h3>
+            <Link>
+              <p>Consult Now</p>
+            </Link>
           </div>
-          <div className="max-w-sm mx-auto p-6 bg-white shadow-lg rounded-lg border border-gray-300 text-center relative">
-            {/* Icon with Border */}
-            <div className="absolute left-1/2 -top-8 transform -translate-x-1/2 bg-white p-4 rounded-full border-4 border-blue-500 shadow-md">
-              <img src={img4} alt="" srcset="" className="w-10" />
-            </div>
-
-            {/* Card Content */}
-            <div className="mt-10">
-              <h2 className="text-xl font-semibold text-gray-800">
-                Doctor Consultation
-              </h2>
-              <p className="text-gray-600 mt-2">
-                Book an appointment with expert doctors and get professional
-                health advice.
-              </p>
-            </div>
+          <div>
+            <img src={genarel} alt="" />
+            <h3 className="mb-2 text-lg font-bold text-primaryColor-shade-200">
+              General Surgeon
+            </h3>
+            <Link>
+              <p>Consult Now</p>
+            </Link>
           </div>
-          <div className="max-w-sm mx-auto p-6 bg-white shadow-lg rounded-lg border border-gray-300 text-center relative">
-            {/* Icon with Border */}
-            <div className="absolute left-1/2 -top-8 transform -translate-x-1/2 bg-white p-4 rounded-full border-4 border-blue-500 shadow-md">
-              <img src={img5} alt="" srcset="" className="w-10" />{" "}
-            </div>
-
-            {/* Card Content */}
-            <div className="mt-10">
-              <h2 className="text-xl font-semibold text-gray-800">
-                Doctor Consultation
-              </h2>
-              <p className="text-gray-600 mt-2">
-                Book an appointment with expert doctors and get professional
-                health advice.
-              </p>
-            </div>
+          <div>
+            <img src={Otolaryngologist} alt="" />
+            <h3 className="mb-2 text-lg font-bold text-primaryColor-shade-200">
+              Otolaryngologists (ENT)
+            </h3>
+            <Link>
+              <p>Consult Now</p>
+            </Link>
           </div>
-          <div className="max-w-sm mx-auto p-6 bg-white shadow-lg rounded-lg border border-gray-300 text-center relative">
-            {/* Icon with Border */}
-            <div className="absolute left-1/2 -top-8 transform -translate-x-1/2 bg-white p-4 rounded-full border-4 border-blue-500 shadow-md">
-              <img src={img6} alt="" srcset="" className="w-10" />{" "}
-            </div>
-
-            {/* Card Content */}
-            <div className="mt-10">
-              <h2 className="text-xl font-semibold text-gray-800">
-                Doctor Consultation
-              </h2>
-              <p className="text-gray-600 mt-2">
-                Book an appointment with expert doctors and get professional
-                health advice.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Find by doctor  section */}
-      <section className="px-[100px] mb-[100px]">
-        <h1 className="text-center text-[40px]">Top Doctors to Book</h1>
-        <p className="text-center">
-          Simply browse through our extensive list of trusted doctors, schedule{" "}
-          <br />
-          your appointment hassle-free.
-        </p>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 p-6">
-          {doctorList.slice(0, 10).map((doctor) => (
-            <div
-              key={doctor.id}
-              className="border p-4 shadow-lg rounded-lg text-center bg-white"
-            >
-              {/* Doctor Image */}
-              <img
-                src={doctor.image}
-                alt={doctor.name}
-                className="w-24 h-24 mx-auto rounded-full border-4 border-blue-500"
-              />
-
-              {/* Speciality */}
-              <h2 className="text-lg font-bold mt-2 text-gray-900">
-                {doctor.speciality}
-              </h2>
-            </div>
-          ))}
         </div>
       </section>
 
@@ -278,6 +127,90 @@ const Home = () => {
                 className="block w-full rounded-sm  bg- py-3 px-4 bg-[#62E2EA]  p-4 text-base font-bold capitalize duration-300  text-white  "
               />
             </form>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-15 mt-20 mb-[100px]">
+        <h1 className=" text-md mb-10 block text-xl font-bold text-black sm:text-2xl lg:text-4xl">
+          Frequently asked questions
+        </h1>
+        <div className="collapse collapse-arrow bg-base-100 border border-base-300">
+          <input type="radio" name="my-accordion-2" defaultChecked />
+          <div className="collapse-title font-bold accordion-header text mb-0 text-gray-800 py-4 px-5 relative flex w-full items-center rounded-none border-0 bg-white text-left text-base transition focus:outline-none">
+            What Services do Sasthya Seba Provide?{" "}
+          </div>
+          <div className="collapse-content text-sm">
+            Sasthya Seba helps by offering a wide range of convenient healthcare
+            services, like:
+            <ul>
+              <li>Doctors Appointment</li>
+              <li>Telemedicine (Doctor consultation over video/voice call)</li>
+              <li>Hospital Information</li>
+              <li>Diagnostic Information</li>
+              <li>Ambulance Service</li>
+              <li>Diagnostic Home Service</li>
+              <li>Domiciliary & Physiotherapy Services</li>
+              <li>Medical Instruments Rental</li>
+              <li>Sample Collection for Diagnostics</li>
+              <li>Medical Tourism Services</li>
+            </ul>
+          </div>
+        </div>
+        <div className="collapse collapse-arrow bg-base-100 border border-base-300">
+          <input type="radio" name="my-accordion-2" />
+          <div className="collapse-title font-bold accordion-header text mb-0 text-gray-800 py-4 px-5 relative flex w-full items-center rounded-none border-0 bg-white text-left text-base transition focus:outline-none">
+            How much do doctors' consultations on Sasthya Seba cost?
+          </div>
+          <div className="collapse-content text-sm">
+            The fee for consultations is decided by the doctor. We have no
+            control over the price.
+          </div>
+        </div>
+        <div className="collapse collapse-arrow bg-base-100 border border-base-300">
+          <input type="radio" name="my-accordion-2" />
+          <div className="collapse-title font-bold accordion-header text mb-0 text-gray-800 py-4 px-5 relative flex w-full items-center rounded-none border-0 bg-white text-left text-base transition focus:outline-none">
+            I don't know a lot about technology. What shall I do to get a
+            doctor's appointment?{" "}
+          </div>
+          <div className="collapse-content text-sm">
+            It's not just for people who are tech-savvy, though. Usability has
+            been our key area of attention. Therefore, using the site shouldn't
+            be a problem if you can manage a simple website or email. Now, if
+            you want to schedule a doctor's appointment, simply use our search
+            option and enter the name of the physician, their area of expertise,
+            or the illness you have. When you see the appointment button and the
+            doctor's brief bio, click it. Keep calm and follow the appointment
+            platform's instructions; soon you will receive an appointment
+            confirmation.
+          </div>
+        </div>
+        <div className="collapse collapse-arrow bg-base-100 border border-base-300">
+          <input type="radio" name="my-accordion-2" />
+          <div className="collapse-title font-bold accordion-header text mb-0 text-gray-800 py-4 px-5 relative flex w-full items-center rounded-none border-0 bg-white text-left text-base transition focus:outline-none">
+            Do you provide Ambulance services outside of Dhaka?
+          </div>
+          <div className="collapse-content text-sm">
+            Yes. We provide nationwide service.
+          </div>
+        </div>
+        <div className="collapse collapse-arrow bg-base-100 border border-base-300">
+          <input type="radio" name="my-accordion-2" />
+          <div className="collapse-title font-bold accordion-header text mb-0 text-gray-800 py-4 px-5 relative flex w-full items-center rounded-none border-0 bg-white text-left text-base transition focus:outline-none">
+            Is Telemedicine Right for Me?
+          </div>
+          <div className="collapse-content text-sm">
+            We cannot answer this question. It depends on your health / medical
+            condition and urgency for doctor consultation. It's not always
+            convenient or easy for everyone to get medical care. Telemedicine
+            makes it possible to access healthcare more swiftly, practically,
+            and locally. Telemedicine is another option for receiving
+            professional medical care. Telemedicine has the benefit of reducing
+            waiting and travel times as well as time away from work or other
+            obligations. Basically Telemedicine gives you instant support at
+            your sudden critical moment or a follow-up meeting with a doctor.
+            Since telemedicine may not always be acceptable, you might require a
+            medical expert's assistance to decide whether it is appropriate.
           </div>
         </div>
       </section>
