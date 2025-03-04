@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa";
+import video from ".././assets/img/video.webp";
+import home from ".././assets/img/home.webp";
+import chamber from ".././assets/img/chamber.webp";
+import ambulance from ".././assets/img/ambulance.webp";
+import therapi from ".././assets/img/therapi.webp";
 
 const Hero2 = () => {
   const [search, setSearch] = useState("");
@@ -35,12 +40,9 @@ const Hero2 = () => {
         <div className="grid grid-cols-5 gap-8 ">
           <div className="card card-compact bg-base-100 w-48 shadow-xl">
             <figure>
-              <img
-                src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                alt="Shoes"
-              />
+              <img src={video} alt="Shoes" />
             </figure>
-            <div className="card-body text-center">
+            <div className="text-center my-4 mx-2">
               <h2 className="card-title text-bold text-xl ">
                 Video Consultancy
               </h2>
@@ -48,6 +50,50 @@ const Hero2 = () => {
             </div>
           </div>
           <div className="card card-compact bg-base-100 w-48 shadow-xl">
+            <figure>
+              <img src={chamber} alt="Shoes" />
+            </figure>
+            <div className="text-center my-4 mx-2">
+              <h2 className="card-title text-bold text-xl ">
+                Video Consultancy
+              </h2>
+              <p>Consult with best doctors through video call.</p>
+            </div>
+          </div>
+          <div className="card card-compact bg-base-100 w-48 shadow-xl">
+            <figure>
+              <img src={home} alt="Shoes" />
+            </figure>
+            <div className="text-center my-4 mx-2">
+              <h2 className="card-title text-bold text-xl ">
+                Video Consultancy
+              </h2>
+              <p>Consult with best doctors through video call.</p>
+            </div>
+          </div>
+          <div className="card card-compact bg-base-100 w-48 shadow-xl">
+            <figure>
+              <img src={ambulance} alt="Shoes" />
+            </figure>
+            <div className="text-center my-4 mx-2">
+              <h2 className="card-title text-bold text-xl ">
+                Video Consultancy
+              </h2>
+              <p>Consult with best doctors through video call.</p>
+            </div>
+          </div>
+          <div className="card card-compact bg-base-100 w-48 shadow-xl">
+            <figure>
+              <img src={therapi} alt="Shoes" />
+            </figure>
+            <div className="text-center my-4 mx-2">
+              <h2 className="card-title text-bold text-xl ">
+                Domiciliary Service
+              </h2>
+              <p>Physiotherapy and Nurse service at home.</p>
+            </div>
+          </div>
+          {/* <div className="card card-compact bg-base-100 w-48 shadow-xl">
             <figure>
               <img
                 src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
@@ -102,7 +148,7 @@ const Hero2 = () => {
               </h2>
               <p>Physiotherapy and Nurse service at home.</p>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
     </div>

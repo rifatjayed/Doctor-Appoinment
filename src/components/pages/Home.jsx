@@ -30,11 +30,11 @@ const Home = () => {
       {/* Find by Speciality  section */}
 
       <section className="px-[100px] mb-[100px]">
-        <h1 className="text-center text-[40px]">What we do best.</h1>
-        <p className="text-center">
-          Simply browse through our extensive list of trusted doctors, schedule{" "}
-          <br />
-          your appointment hassle-free.
+        <h1 className="text-md text-xl sm:text-2xl font-bold lg:text-4xl mb-2 block text-black mt-10">
+          Consult our top specialized doctors
+        </h1>
+        <p className="font-medium text-black-tint-400">
+          Our doctors are ready to serve you 24/7
         </p>
         <div className="grid grid-cols-3 gap-12 mt-14">
           {/* <div className="card w-96 bg-base-100 card-lg shadow-sm">
@@ -243,6 +243,42 @@ const Home = () => {
               </h2>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="bg-[#023154] mx-15">
+        <div className="flex items-center mx-15 py-15">
+          <div className="w-3/5  items-center">
+            <h1 className=" font-bold text-[#62E2EA] text-2xl md:text-3xl lg:text-4xl 2xl:text-6xl 3xl:text-7xl 4xl:text-7xl block mb-2 5xl:text-6xl">
+              Need some advice from our experts?
+            </h1>
+            <p className=" text-base font-normal lg:text-lg block text-black-tint-800 mb-6 md:mb-10 text-black-tint-1000 text-white">
+              Request a call back now!
+            </p>
+          </div>
+          <div className="w-2/5">
+            <p className=" text-xs font-medium leading-5 lg:text-sm  block text-white mb-3">
+              Please fill out this quick form and we'll get back to you within
+              few hours!
+            </p>
+            <form className="flex flex-col">
+              <input
+                type="text"
+                placeholder="Enter Your Name"
+                className="inputFocus placeholder-slate-700 mt-1 mb-3  block w-full rounded-sm border-transparent border-black-tint-700 bg-white py-3 px-4 shadow-sm focus:outline-none  sm:text-sm"
+              />
+              <input
+                type="text"
+                placeholder="Enter Your Phone Number"
+                className="inputFocus placeholder-slate-700 mt-1 mb-3  block w-full rounded-sm border-transparent border-black-tint-700 bg-white py-3 px-4 shadow-sm focus:outline-none  sm:text-sm"
+              />{" "}
+              <input
+                type="button"
+                value="Call Me back"
+                className="block w-full rounded-sm  bg- py-3 px-4 bg-[#62E2EA]  p-4 text-base font-bold capitalize duration-300  text-white  "
+              />
+            </form>
+          </div>
         </div>
       </section>
     </div>
