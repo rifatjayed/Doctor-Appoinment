@@ -2,10 +2,11 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 import "./App.css";
 import Home from "./components/pages/Home";
 import Login from "./components/pages/Login";
-import AllDoctor from "./components/pages/AllDoctor";
 import Register from "./components/pages/Register";
 import About from "./components/pages/About";
 import Contact from "./components/pages/Contact";
+import FindDoctor from "./components/pages/FindDoctoctor";
+import FindAmbulance from "./components/pages/FindAmbulance";
 
 const router = createBrowserRouter([
   {
@@ -33,10 +34,18 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/allDoctor",
+    path: "/finddoctor",
     element: (
       <>
-        <AllDoctor></AllDoctor>
+        <FindDoctor></FindDoctor>
+      </>
+    ),
+  },
+  {
+    path: "/findambulance",
+    element: (
+      <>
+        <FindAmbulance></FindAmbulance>{" "}
       </>
     ),
   },

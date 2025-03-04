@@ -1,6 +1,6 @@
 import React from "react";
 
-const AllDoctor = () => {
+const FindDoctor = () => {
   return (
     <div>
       <h1>All</h1>
@@ -8,4 +8,4 @@ const AllDoctor = () => {
   );
 };
 
-export default AllDoctor;
+export default FindDoctor;

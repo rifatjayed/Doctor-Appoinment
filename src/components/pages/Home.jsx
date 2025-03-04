@@ -37,59 +37,71 @@ const Home = () => {
           Our doctors are ready to serve you 24/7
         </p>
         <div className="grid grid-cols-6 gap-4 mt-14">
-          <div>
-            <img src={gynologist} alt="" />
+          <div className="text-center">
+            <img className="mx-auto" src={gynologist} alt="" />
             <h3 className="mb-2 text-lg font-bold text-primaryColor-shade-200">
               Gynecologist & Obstetrician
             </h3>
             <Link>
-              <p>Consult Now</p>
+              <p className="inline-block rounded px-6 py-2 text-[#078ff7] hover:bg-[#DBEFFE]">
+                Consult Now
+              </p>
             </Link>
           </div>
 
-          <div className="">
-            <img src={medicine} alt="" />
+          <div className="text-center">
+            <img className="mx-auto" src={medicine} alt="" />
             <h3 className="mb-2 text-lg font-bold text-primaryColor-shade-200">
               Medicine Specialist
             </h3>
             <Link>
-              <p>Consult Now</p>
+              <p className="inline-block rounded px-6 py-2 text-[#078ff7] hover:bg-[#DBEFFE]">
+                Consult Now
+              </p>
             </Link>
           </div>
-          <div>
-            <img src={cardologist} alt="" />
+          <div className="text-center">
+            <img className="mx-auto" src={cardologist} alt="" />
             <h3 className="mb-2 text-lg font-bold text-primaryColor-shade-200">
               Cardiologist
             </h3>
             <Link>
-              <p>Consult Now</p>
+              <p className="inline-block rounded px-6 py-2 text-[#078ff7] hover:bg-[#DBEFFE]">
+                Consult Now
+              </p>
             </Link>
           </div>
-          <div>
-            <img src={Pediatrician} alt="" />
+          <div className="text-center">
+            <img className="mx-auto" src={Pediatrician} alt="" />
             <h3 className="mb-2 text-lg font-bold text-primaryColor-shade-200">
               Pediatrician
             </h3>
             <Link>
-              <p>Consult Now</p>
+              <p className="inline-block rounded px-6 py-2 text-[#078ff7] hover:bg-[#DBEFFE]">
+                Consult Now
+              </p>
             </Link>
           </div>
-          <div>
-            <img src={genarel} alt="" />
+          <div className="text-center">
+            <img className="mx-auto" src={genarel} alt="" />
             <h3 className="mb-2 text-lg font-bold text-primaryColor-shade-200">
               General Surgeon
             </h3>
             <Link>
-              <p>Consult Now</p>
+              <p className="inline-block rounded px-6 py-2 text-[#078ff7] hover:bg-[#DBEFFE]">
+                Consult Now
+              </p>
             </Link>
           </div>
-          <div>
-            <img src={Otolaryngologist} alt="" />
+          <div className="text-center">
+            <img className="mx-auto" src={Otolaryngologist} alt="" />
             <h3 className="mb-2 text-lg font-bold text-primaryColor-shade-200">
               Otolaryngologists (ENT)
             </h3>
             <Link>
-              <p>Consult Now</p>
+              <p className="inline-block rounded px-6 py-2 text-[#078ff7] hover:bg-[#DBEFFE]">
+                Consult Now
+              </p>
             </Link>
           </div>
         </div>
