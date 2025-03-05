@@ -7,6 +7,7 @@ import About from "./components/pages/About";
 import Contact from "./components/pages/Contact";
 import FindDoctor from "./components/pages/FindDoctoctor";
 import FindAmbulance from "./components/pages/FindAmbulance";
+import Footer from "./components/Footer";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,7 @@ const router = createBrowserRouter([
     element: (
       <>
         <Home></Home>
+        <Footer></Footer>
       </>
     ),
   },
@@ -38,6 +40,7 @@ const router = createBrowserRouter([
     element: (
       <>
         <FindDoctor></FindDoctor>
+        <Footer></Footer>
       </>
     ),
   },
@@ -45,7 +48,8 @@ const router = createBrowserRouter([
     path: "/findambulance",
     element: (
       <>
-        <FindAmbulance></FindAmbulance>{" "}
+        <FindAmbulance></FindAmbulance>
+        <Footer></Footer>
       </>
     ),
   },
