@@ -8,12 +8,14 @@ import Contact from "./components/pages/Contact";
 import FindDoctor from "./components/pages/FindDoctoctor";
 import FindAmbulance from "./components/pages/FindAmbulance";
 import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
       <>
+        <Navbar></Navbar>
         <Home></Home>
         <Footer></Footer>
       </>
@@ -23,6 +25,7 @@ const router = createBrowserRouter([
     path: "/about",
     element: (
       <>
+        <Navbar></Navbar>
         <About></About>
       </>
     ),
@@ -31,6 +34,7 @@ const router = createBrowserRouter([
     path: "/contact",
     element: (
       <>
+        <Navbar></Navbar>
         <Contact></Contact>
       </>
     ),
@@ -39,6 +43,7 @@ const router = createBrowserRouter([
     path: "/finddoctor",
     element: (
       <>
+        <Navbar></Navbar>
         <FindDoctor></FindDoctor>
         <Footer></Footer>
       </>
@@ -48,6 +53,7 @@ const router = createBrowserRouter([
     path: "/findambulance",
     element: (
       <>
+        <Navbar></Navbar>
         <FindAmbulance></FindAmbulance>
         <Footer></Footer>
       </>
@@ -57,6 +63,7 @@ const router = createBrowserRouter([
     path: "/login",
     element: (
       <>
+        <Navbar></Navbar>
         <Login></Login>
       </>
     ),
