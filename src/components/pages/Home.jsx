@@ -7,36 +7,39 @@ import Pediatrician from "../../assets/img/pediatrician.webp";
 import genarel from "../../assets/img/general-surgeon.webp";
 import Otolaryngologist from "../../assets/img/otolaryngologists-ent.webp";
 
-import doctorList from "../../Data/db";
-import Navbar2 from "../Navbar2";
 import Hero2 from "../Hero2";
 import { Link } from "react-router";
 
 const Home = () => {
   return (
     <div className=" ">
-      <div className=" min-h-screen flex flex-col">
-        {/* <Navbar2></Navbar2> */}
-      
-        {/* <div className="h-[calc(100vh-80px)]">
-          <Hero></Hero>
-        </div> */}
+      {/* <div className=" ">
+        <Navbar></Navbar>
 
         <div className="">
           <Hero2></Hero2>
+        </div>
+      </div> */}
+      <div className="min-h-screen flex flex-col">
+        {/* Navbar */}
+        <Navbar />
+
+        {/* Hero Section */}
+        <div className="flex-1">
+          <Hero2 />
         </div>
       </div>
 
       {/* Find by Speciality  section */}
 
-      <section className="px-[100px] mb-[100px]">
+      <section className="px-[40px] md:px-[100px] mb-[100px]">
         <h1 className="text-md text-xl sm:text-2xl font-bold lg:text-4xl mb-2 block text-black mt-10">
           Consult our top specialized doctors
         </h1>
         <p className="font-medium text-black-tint-400">
           Our doctors are ready to serve you 24/7
         </p>
-        <div className="grid grid-cols-6 gap-4 mt-14">
+        <div className="grid grid-cols-2 md:grid-cols-6 gap-4 mt-14">
           <div className="text-center">
             <img className="mx-auto" src={gynologist} alt="" />
             <h3 className="mb-2 text-lg font-bold text-primaryColor-shade-200">
@@ -107,9 +110,9 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="bg-[#023154] mx-15">
-        <div className="flex items-center mx-15 py-15">
-          <div className="w-3/5  items-center">
+      <section className="bg-[#023154] md:mx-15">
+        <div className="flex  flex-col md:flew-row items-center  md:mx-15 py-15">
+          <div className="w-5/6 md:w-3/5  items-center">
             <h1 className=" font-bold text-[#62E2EA] text-2xl md:text-3xl lg:text-4xl 2xl:text-6xl 3xl:text-7xl 4xl:text-7xl block mb-2 5xl:text-6xl">
               Need some advice from our experts?
             </h1>
@@ -117,7 +120,7 @@ const Home = () => {
               Request a call back now!
             </p>
           </div>
-          <div className="w-2/5">
+          <div className="w-5/6 md:w-2/5">
             <p className=" text-xs font-medium leading-5 lg:text-sm  block text-white mb-3">
               Please fill out this quick form and we'll get back to you within
               few hours!

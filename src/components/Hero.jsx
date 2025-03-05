@@ -17,7 +17,7 @@ const Hero = () => {
             </h1>
             <p
               className="py-6 text-lg font-normal
-"
+    "
             >
               Simply browse through our extensive list of trusted doctors,
               schedule your appointment hassle-free.

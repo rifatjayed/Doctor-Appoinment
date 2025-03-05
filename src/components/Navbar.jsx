@@ -84,7 +84,7 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false); // ✅
 
   return (
-    <nav className="bg-white text-black py-4 px-6 shadow-md fixed w-full top-0 z-50">
+    <nav className="relative bg-white text-black py-4 px-6 shadow-md w-full top-0 z-50 ">
       <div className="container mx-auto flex justify-between items-center">
         {/* Left Side - Logo */}
         <Link to="/" className="flex items-center space-x-2">

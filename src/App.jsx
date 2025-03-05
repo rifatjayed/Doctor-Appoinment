@@ -15,7 +15,6 @@ const router = createBrowserRouter([
     path: "/",
     element: (
       <>
-        <Navbar></Navbar>
         <Home></Home>
         <Footer></Footer>
       </>
