@@ -9,8 +9,20 @@ import airAmbulance from "../../assets/img/air-ambulance.webp";
 import freezingAmbulance from "../../assets/img/freezing-ambulance (1).webp";
 import freezingAmbulance1 from "../../assets/img/freezing-ambulance.webp";
 import { RiCheckDoubleLine } from "react-icons/ri";
+import { useForm } from "react-hook-form";
 
 const FindAmbulance = () => {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => console.log(data);
+
+  console.log(watch("example"));
+
   return (
     <div className=" mx-[40px] md:mx-[80px]">
       {/* <div
@@ -341,134 +353,124 @@ const FindAmbulance = () => {
               </p>
             </div>
           </div>
-          {/* <div className="mt-10">
-            <h1 className=" text-base text-[rgb(2,49,84)] bg-[rgb(219,239,254)] font-bold lg:text-lg block   py-3 px-4 mb-4">
-              ACLS Ambulance Service Service
-            </h1>
-            <div className="flex justify-between">
-              <img src={acls1} alt="" srcset="" className="" />
-              <img src={acls2} alt="" />
-            </div>
-            <p className="text-[rgb(57,67,77)] mt-2">
-              AC ambulances are also called Basic Life Support Ambulance, which
-              are primarily used for transporting patients who are medically
-              stable and do not require constant monitoring. AC Ambulances
-              equipped with general equipment like oxygen, stethoscope, and
-              equipment to check the blood pressure, etc. This ambulance is best
-              for transfer of patients in nearby areas. Basic Ambulance is very
-              much used for transferring patients especially to outstation, like
-              from one district to another in Bangladesh. We are one of the most
-              reputed and committed AC Ambulance providers in Dhaka. We take
-              this opportunity to introduce ourselves as one of the quickest AC
-              Ambulance providers.
-            </p>
-            <div className="mt-5">
-              <p className=" text-black-tint-200 flex items-center">
-                <span className="mr-2 text-[rgba(59,130,246,0.5)] text-2xl">
-                  <RiCheckDoubleLine />
-                </span>
-                Get ambulance within 30 minutes*
-              </p>
-              <p className=" text-black-tint-200 flex items-center">
-                <span className="mr-2 text-[rgba(59,130,246,0.5)] text-2xl">
-                  <RiCheckDoubleLine />
-                </span>
-                24/7 affordable quality service
-              </p>
-              <p className=" text-black-tint-200 flex items-center">
-                <span className="mr-2 text-[rgba(59,130,246,0.5)] text-2xl">
-                  <RiCheckDoubleLine />
-                </span>
-                We are just a call away: 01405600700
-              </p>
-            </div>
-          </div>
-          <div className="mt-10">
-            <h1 className=" text-base text-[rgb(2,49,84)] bg-[rgb(219,239,254)] font-bold lg:text-lg block   py-3 px-4 mb-4">
-              AIR Ambulance Service
-            </h1>
-            <div className="flex justify-between">
-              <img src={airAmbulance} alt="" srcset="" className="" />
-              <img src={airAmbulance1} alt="" />
-            </div>
-            <p className="text-[rgb(57,67,77)] mt-2">
-              AC ambulances are also called Basic Life Support Ambulance, which
-              are primarily used for transporting patients who are medically
-              stable and do not require constant monitoring. AC Ambulances
-              equipped with general equipment like oxygen, stethoscope, and
-              equipment to check the blood pressure, etc. This ambulance is best
-              for transfer of patients in nearby areas. Basic Ambulance is very
-              much used for transferring patients especially to outstation, like
-              from one district to another in Bangladesh. We are one of the most
-              reputed and committed AC Ambulance providers in Dhaka. We take
-              this opportunity to introduce ourselves as one of the quickest AC
-              Ambulance providers.
-            </p>
-            <div className="mt-5">
-              <p className=" text-black-tint-200 flex items-center">
-                <span className="mr-2 text-[rgba(59,130,246,0.5)] text-2xl">
-                  <RiCheckDoubleLine />
-                </span>
-                Get ambulance within 30 minutes*
-              </p>
-              <p className=" text-black-tint-200 flex items-center">
-                <span className="mr-2 text-[rgba(59,130,246,0.5)] text-2xl">
-                  <RiCheckDoubleLine />
-                </span>
-                24/7 affordable quality service
-              </p>
-              <p className=" text-black-tint-200 flex items-center">
-                <span className="mr-2 text-[rgba(59,130,246,0.5)] text-2xl">
-                  <RiCheckDoubleLine />
-                </span>
-                We are just a call away: 01405600700
-              </p>
-            </div>
-          </div>
-          <div className="mt-10">
-            <h1 className=" text-base text-[rgb(2,49,84)] bg-[rgb(219,239,254)] font-bold lg:text-lg block   py-3 px-4 mb-4">
-              Freezing Ambulance Service
-            </h1>
-            <div className="flex justify-between">
-              <img src={freezingAmbulance} alt="" srcset="" className="" />
-              <img src={freezingAmbulance1} alt="" />
-            </div>
-            <p className="text-[rgb(57,67,77)] mt-2">
-              AC ambulances are also called Basic Life Support Ambulance, which
-              are primarily used for transporting patients who are medically
-              stable and do not require constant monitoring. AC Ambulances
-              equipped with general equipment like oxygen, stethoscope, and
-              equipment to check the blood pressure, etc. This ambulance is best
-              for transfer of patients in nearby areas. Basic Ambulance is very
-              much used for transferring patients especially to outstation, like
-              from one district to another in Bangladesh. We are one of the most
-              reputed and committed AC Ambulance providers in Dhaka. We take
-              this opportunity to introduce ourselves as one of the quickest AC
-              Ambulance providers.
-            </p>
-            <div className="mt-5">
-              <p className=" text-black-tint-200 flex items-center">
-                <span className="mr-2 text-[rgba(59,130,246,0.5)] text-2xl">
-                  <RiCheckDoubleLine />
-                </span>
-                Get ambulance within 30 minutes*
-              </p>
-              <p className=" text-black-tint-200 flex items-center">
-                <span className="mr-2 text-[rgba(59,130,246,0.5)] text-2xl">
-                  <RiCheckDoubleLine />
-                </span>
-                24/7 affordable quality service
-              </p>
-              <p className=" text-black-tint-200 flex items-center">
-                <span className="mr-2 text-[rgba(59,130,246,0.5)] text-2xl">
-                  <RiCheckDoubleLine />
-                </span>
-                We are just a call away: 01405600700
-              </p>
-            </div>
-          </div> */}
         </div>
-        <div className="w-1/3"></div>
+        <div className="w-full md:w-1/3 mt-10">
+          <div>
+            <div className="rounded-tl-md rounded-tr-md rounded-bl-sm rounded-br-sm bg-primaryColor-shade-200">
+              <h2 className=" text-base font-bold lg:text-lg block text-white  px-6 py-4 bg-[rgb(2,49,84)]">
+                Request an Ambulance
+              </h2>
+              <form
+                onSubmit={handleSubmit(onSubmit)}
+                className="space-y-4 rounded-bl-md rounded-br-md border-l border-r border-b border-[rgba(113,191,251,0.8)]  px-6 py-8"
+              >
+                {/* From Location */}
+                <h6 className=" text-sm font-bold lg:text-base block  mb-1 text-[rgba(57,67,77,0.8)]">
+                  From
+                </h6>
+                <input
+                  {...register("fromLocation", {
+                    required: "Starting location is required",
+                  })}
+                  placeholder="From Location"
+                  className="w-full p-2 border border-gray-300 rounded"
+                />
+                {errors.fromLocation && (
+                  <p className="text-red-500">{errors.fromLocation.message}</p>
+                )}
+
+                {/* Destination */}
+                <h6 className="text-sm font-bold lg:text-base block  mb-1 text-[rgba(57,67,77,0.8)]">
+                  Destination
+                </h6>
+                <input
+                  {...register("destination", {
+                    required: "Destination is required",
+                  })}
+                  placeholder="Destination"
+                  className="w-full p-2 border border-gray-300 rounded"
+                />
+                {errors.destination && (
+                  <p className="text-red-500">{errors.destination.message}</p>
+                )}
+
+                {/* Ambulance Type */}
+                <h6 className="text-sm font-bold lg:text-base block  mb-1 text-[rgba(57,67,77,0.8)]">
+                  Ambulance Type
+                </h6>
+                <select
+                  {...register("ambulanceType", {
+                    required: "Select an ambulance type",
+                  })}
+                  className="w-full p-2 border border-gray-300 rounded"
+                >
+                  <option value="">Select Ambulance Type</option>
+                  <option value="Basic">Basic Ambulance</option>
+                  <option value="ICU">ICU Ambulance</option>
+                  <option value="Air">Air Ambulance</option>
+                  <option value="Neonatal">Neonatal Ambulance</option>
+                </select>
+                {errors.ambulanceType && (
+                  <p className="text-red-500">{errors.ambulanceType.message}</p>
+                )}
+
+                {/* Date */}
+                <h6 className="text-sm font-bold lg:text-base block  mb-1 text-[rgba(57,67,77,0.8)]">
+                  Date
+                </h6>
+                <input
+                  type="date"
+                  {...register("date", { required: "Date is required" })}
+                  className="w-full p-2 border border-gray-300 rounded"
+                />
+                {errors.date && (
+                  <p className="text-red-500">{errors.date.message}</p>
+                )}
+
+                {/* Name */}
+                <h6 className="text-sm font-bold lg:text-base block  mb-1 text-[rgba(57,67,77,0.8)]">
+                  Name
+                </h6>
+                <input
+                  {...register("name", { required: "Name is required" })}
+                  placeholder="Full Name"
+                  className="w-full p-2 border border-gray-300 rounded"
+                />
+                {errors.name && (
+                  <p className="text-red-500">{errors.name.message}</p>
+                )}
+
+                {/* Phone Number */}
+                <h6 className="text-sm font-bold lg:text-base block  mb-1 text-[rgba(57,67,77,0.8)]">
+                  Phone Number
+                </h6>
+                <input
+                  type="tel"
+                  {...register("phone", {
+                    required: "Phone number is required",
+                    pattern: {
+                      value: /^[0-9]{10,11}$/,
+                      message: "Enter a valid phone number",
+                    },
+                  })}
+                  placeholder="Phone Number"
+                  className="w-full p-2 border border-gray-300 rounded"
+                />
+                {errors.phone && (
+                  <p className="text-red-500">{errors.phone.message}</p>
+                )}
+
+                {/* Submit Button */}
+                <button
+                  type="submit"
+                  className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600   text-base font-bold capitalize  duration-300 hover:bg-primaryColor active:bg-primaryColor-shade-200"
+                >
+                  Send Ambulance Request
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
