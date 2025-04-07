@@ -1,11 +1,7 @@
 import React from "react";
 
 const DoctorList = () => {
-  return (
-    <div>
-      <h1>hahaa</h1>
-    </div>
-  );
+  return <div></div>;
 };
 
 export default DoctorList;
