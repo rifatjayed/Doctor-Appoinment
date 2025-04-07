@@ -9,6 +9,7 @@ import FindDoctor from "./components/pages/FindDoctoctor";
 import FindAmbulance from "./components/pages/FindAmbulance";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
+import DoctorDetails from "./components/pages/DoctorDetails";
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,15 @@ const router = createBrowserRouter([
         <Navbar></Navbar>
         <FindDoctor></FindDoctor>
         <Footer></Footer>
+      </>
+    ),
+  },
+  {
+    path: "/doctor/:id",
+    element: (
+      <>
+        <Navbar></Navbar>
+        <DoctorDetails></DoctorDetails>,<Footer></Footer>
       </>
     ),
   },

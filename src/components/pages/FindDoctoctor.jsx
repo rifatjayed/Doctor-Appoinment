@@ -5,6 +5,7 @@ import doctorList from "../../Data/db2";
 import doctorProImg from "../../assets/img/dctrpro.jpg";
 
 import { useForm } from "react-hook-form";
+import { Link } from "react-router";
 
 const FindDoctor = () => {
   const {
@@ -96,9 +97,12 @@ const FindDoctor = () => {
 
                   {/* Doctor Info */}
                   <div className="sm:ml-6 text-center sm:text-left">
-                    <h1 className="text-lg font-semibold text-gray-800">
+                    <Link
+                      to={`/doctor/${doctor.id}`}
+                      className=" text-lg font-semibold text-gray-800    hover:text-blue-600"
+                    >
                       {doctor.name}
-                    </h1>
+                    </Link>
                     <h3 className="text-sm text-gray-600">
                       {doctor.degrees.join(", ")}
                     </h3>

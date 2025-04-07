@@ -1,6 +1,6 @@
 let doctorList = [
   {
-    id: "D01",
+    id: "1",
     name: "Dr. Nusrat Jahan",
     degrees: ["MBBS", "FCPS (Cardiology)"],
     specialization: "Cardiologist",
@@ -31,7 +31,7 @@ let doctorList = [
     availability: "Evening (5 PM - 8 PM)",
   },
   {
-    id: "D02",
+    id: "2",
     name: "Dr. Shahinur Rahman",
     degrees: ["MBBS", "MD (Neurology)"],
     specialization: "Neurologist",
@@ -62,7 +62,7 @@ let doctorList = [
     availability: "Morning (9 AM - 12 PM)",
   },
   {
-    id: "D03",
+    id: "3",
     name: "Dr. Farhana Akter",
     degrees: ["MBBS", "FCPS (Gyne & Obs)"],
     specialization: "Gynecologist",
@@ -93,7 +93,7 @@ let doctorList = [
     availability: "10 AM - 1 PM",
   },
   {
-    id: "D04",
+    id: "4",
     name: "Dr. Tanvir Hossain",
     degrees: ["MBBS", "MS (Orthopedics)"],
     specialization: "Orthopedic Surgeon",
@@ -124,7 +124,7 @@ let doctorList = [
     availability: "Evening (4 PM - 7 PM)",
   },
   {
-    id: "D05",
+    id: "5",
     name: "Dr. Kamal Uddin",
     degrees: ["MBBS", "MD (Dermatology)"],
     specialization: "Dermatologist",
@@ -150,7 +150,7 @@ let doctorList = [
     availability: "Afternoon (2 PM - 5 PM)",
   },
   {
-    id: "D06",
+    id: "6",
     name: "Dr. Sabrina Haque",
     degrees: ["MBBS", "FCPS (Pediatrics)"],
     specialization: "Child Specialist",
@@ -181,7 +181,7 @@ let doctorList = [
     availability: "Morning (9 AM - 1 PM)",
   },
   {
-    id: "D07",
+    id: "7",
     name: "Dr. Mahmudul Hasan",
     degrees: ["MBBS", "MS (ENT)"],
     specialization: "ENT Specialist",
@@ -212,7 +212,7 @@ let doctorList = [
     availability: "Evening (5 PM - 8 PM)",
   },
   {
-    id: "D08",
+    id: "8",
     name: "Dr. Nilufa Begum",
     degrees: ["MBBS", "MD (Medicine)"],
     specialization: "Internal Medicine Specialist",
@@ -243,7 +243,7 @@ let doctorList = [
     availability: "10 AM - 2 PM",
   },
   {
-    id: "D09",
+    id: "9",
     name: "Dr. Rafiqul Islam",
     degrees: ["MBBS", "MD (Nephrology)"],
     specialization: "Kidney Specialist",
@@ -274,7 +274,7 @@ let doctorList = [
     availability: "Morning (8 AM - 12 PM)",
   },
   {
-    id: "D10",
+    id: "10",
     name: "Dr. Ruma Akter",
     degrees: ["MBBS", "FCPS (Ophthalmology)"],
     specialization: "Eye Specialist",
