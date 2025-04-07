@@ -74,8 +74,8 @@ const FindDoctor = () => {
         </div>
       </div>
 
-      <div className="mx-[150px]">
-        <h3>
+      <div className="px-[150px] bg-[rgb(248_248_250)]">
+        <h3 className="py-5">
           Book appointments with minimum wait-time & Video consult with verified
           doctors
         </h3>
@@ -84,7 +84,7 @@ const FindDoctor = () => {
           {doctorList.map((doctor) => {
             return (
               <div>
-                <div className="p-10 shadow-[5px_5px_10px_0px_rgba(0,_0,_0,_0.1)]">
+                <div className="p-10 bg-white shadow-[5px_5px_10px_0px_rgba(0,_0,_0,_0.1)] mb-6">
                   <div className="flex">
                     <div className="">
                       <img
@@ -102,24 +102,34 @@ const FindDoctor = () => {
                     </div>
                   </div>
 
-                  <p className="grid auto-cols-max grid-flow-col mt-10">
+                  {/* <p className="grid auto-cols-max grid-flow-col">
                     {doctor.services}
+                  </p> */}
+                  <p className="grid auto-cols-max grid-flow-col gap-2 mt-10">
+                    {doctor.services.map((service, index) => (
+                      <span
+                        className="bg-[rgb(248_248_250)] py-1 px-3"
+                        key={index}
+                      >
+                        {service}
+                      </span>
+                    ))}
                   </p>
-                  <div className="flex justify-end">
-                    <p className="mr-4">Book appointment for:</p>
+                  <div className="flex justify-end items-center">
+                    <p className="mr-4 text-[rgb(120_138_155)]">
+                      Book appointment for:
+                    </p>
                     {/* Date */}
-                    <h6 className="text-sm font-bold lg:text-base block  mb-1 ">
-                      Date
-                    </h6>
+
                     <input
                       type="date"
                       {...register("date", { required: "Date is required" })}
-                      className="w-[130px] border border-gray-300 rounded"
+                      className="text-[rgb(120_138_155)] px-4 py-3  border border-gray-300 rounded"
                     />
                     {errors.date && (
                       <p className="text-red-500">{errors.date.message}</p>
                     )}
-                    <button className="text-sky-500 border-2 border-sky-500 ml-4 px-5 py-3">
+                    <button className="text-base leading-[1.4rem] font-medium text-sky-500 border-2 border-sky-500 ml-4 px-4 py-3 hover:bg-sky-500 hover:text-white">
                       Book Appointment
                     </button>
                   </div>
