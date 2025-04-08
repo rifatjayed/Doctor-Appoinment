@@ -259,6 +259,29 @@ import doctorList from "../../Data/db2";
 
 const DoctorDetails = () => {
   const [selected, setSelected] = useState("");
+  const [appointment, setAppointment] = useState("");
+
+  // new
+  const [locationSelected, setLocationSelected] = useState(false);
+  const [consultationSelected, setConsultationSelected] = useState(false);
+  const [appointmentSelected, setAppointmentSelected] = useState(false);
+
+  const handleLocationChange = (index) => {
+    setLocationSelected(true);
+  };
+
+  const handleConsultationChange = (type) => {
+    setConsultationSelected(true);
+    setSelected(type);
+  };
+
+  const handleAppointmentChange = (type) => {
+    setAppointmentSelected(true);
+    setAppointment(type);
+  };
+
+  const isButtonDisabled =
+    !locationSelected || !consultationSelected || !appointmentSelected;
 
   const { id } = useParams();
   console.log(id);
@@ -383,6 +406,7 @@ const DoctorDetails = () => {
         </div>
 
         {/* Right Panel for Location & Consultation Type */}
+
         <div className="w-full sm:w-1/3 bg-white rounded-lg ml-0 md:ml-8 sm:ml-4 mt-8 sm:mt-0 px-6 py-3">
           <h1 className="text-sm leading-5 text-gray-900 font-medium text-center">
             Select Location, Time Slot Consultation Method
@@ -393,7 +417,7 @@ const DoctorDetails = () => {
             {doctor.chamber.map((cham, index) => (
               <div
                 key={index}
-                className=" bg-[#f8f8fa] rounded-xl my-2 p-5 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4"
+                className="bg-[#f8f8fa] rounded-xl my-2 p-5 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4"
               >
                 <div className="flex items-center gap-3">
                   {/* Radio Button */}
@@ -402,6 +426,7 @@ const DoctorDetails = () => {
                     name="chamber"
                     id={`chamber-${index}`}
                     className="text-blue-600"
+                    onChange={() => handleLocationChange(index)}
                   />
                   <div>
                     <p className="font-semibold text-lg">{cham.name}</p>
@@ -419,7 +444,7 @@ const DoctorDetails = () => {
             <p>Select Consultation Type</p>
             <div className="mt-2">
               <button
-                onClick={() => setSelected("face")}
+                onClick={() => handleConsultationChange("face")}
                 className={`p-2 rounded-full border mr-2 ${
                   selected === "face"
                     ? "bg-[rgb(212_237_255)] !text-[rgb(7_143_247)] border-[rgb(212_237_255)]"
@@ -430,7 +455,7 @@ const DoctorDetails = () => {
               </button>
 
               <button
-                onClick={() => setSelected("video")}
+                onClick={() => handleConsultationChange("video")}
                 className={`p-2 rounded-full border ${
                   selected === "video"
                     ? "bg-[rgb(212_237_255)] !text-[rgb(7_143_247)] border-[rgb(212_237_255)]"
@@ -441,8 +466,48 @@ const DoctorDetails = () => {
               </button>
             </div>
           </div>
+          <hr className="border w-full border-gray-200 my-4" />
+          <div>
+            <p>Appointment Type</p>
+            <div className="mt-2">
+              <button
+                onClick={() => handleAppointmentChange("new")}
+                className={`p-2 rounded-full border mr-2 ${
+                  appointment === "new"
+                    ? "bg-[rgb(212_237_255)] !text-[rgb(7_143_247)] border-[rgb(212_237_255)]"
+                    : "bg-white text-gray-800 border-gray-200"
+                }`}
+              >
+                New Patient
+              </button>
 
-          <button className=" mt-5 w-full px-4 py-3 text-base font-medium text-white duration-300 bg-blue-600">
+              <button
+                onClick={() => handleAppointmentChange("follow")}
+                className={`p-2 rounded-full border ${
+                  appointment === "follow"
+                    ? "bg-[rgb(212_237_255)] !text-[rgb(7_143_247)] border-[rgb(212_237_255)]"
+                    : "bg-white text-gray-800 border-gray-200"
+                }`}
+              >
+                Follow Up
+              </button>
+              <button
+                onClick={() => handleAppointmentChange("report")}
+                className={`p-2 rounded-full border ml-2 ${
+                  appointment === "report"
+                    ? "bg-[rgb(212_237_255)] !text-[rgb(7_143_247)] border-[rgb(212_237_255)]"
+                    : "bg-white text-gray-800 border-gray-200"
+                }`}
+              >
+                Report Show
+              </button>
+            </div>
+          </div>
+
+          <button
+            className="mt-5 w-full px-4 py-3 text-base font-medium text-white duration-300 bg-blue-600"
+            disabled={isButtonDisabled}
+          >
             Confirm
           </button>
         </div>
