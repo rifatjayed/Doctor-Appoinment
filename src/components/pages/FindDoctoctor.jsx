@@ -116,7 +116,7 @@ const FindDoctor = () => {
                 </div>
 
                 {/* Services */}
-                <p className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 mt-10">
+                <p className="flex justify-around mt-10">
                   {doctor.services.map((service, index) => (
                     <span
                       className="bg-[rgb(248_248_250)] py-1 px-3 text-sm text-gray-700 rounded"
@@ -126,7 +126,7 @@ const FindDoctor = () => {
                     </span>
                   ))}
                 </p>
-
+                <hr className="border border-gray-200 my-6" />
                 {/* Booking Area */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-end mt-6 space-y-4 sm:space-y-0 sm:space-x-4">
                   <p className="text-[rgb(120_138_155)] text-sm text-center sm:text-right">
