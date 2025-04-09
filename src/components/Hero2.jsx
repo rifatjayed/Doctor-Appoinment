@@ -143,22 +143,22 @@ const Hero2 = () => {
       </div>
 
       {/* Services Cards */}
-      <section className="flex justify-center items-center my-20">
+      <section className="flex justify-center items-center m-8 md:m-20">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
           {services.map((item, index) => (
             <div
               key={index}
-              className="card card-compact bg-white w-full shadow-xl transition-transform hover:scale-105"
+              className="card  bg-white w-full shadow-xl transition-transform hover:scale-105"
             >
               <figure>
                 <img
                   src={item.img}
                   alt={item.title}
-                  className="w-full h-40 object-contain p-4"
+                  className="w-full h-40  "
                 />
               </figure>
-              <div className="text-center my-4 mx-2">
-                <h2 className="card-title text-bold text-xl mb-2">
+              <div className="text-center py-4 mx-2">
+                <h2 className=" text-center font-bold text-xl mb-2">
                   {item.title}
                 </h2>
                 <p className="text-sm text-gray-600">{item.desc}</p>

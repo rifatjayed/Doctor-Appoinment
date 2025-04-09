@@ -33,7 +33,7 @@ const Home = () => {
 
       {/* Find by Speciality  section */}
 
-      <section className="px-[40px] md:px-[100px] mb-[100px]">
+      {/* <section className="px-[40px] md:px-[100px] mb-[100px]">
         <h1 className="text-md text-xl sm:text-2xl font-bold lg:text-4xl mb-2 block text-black mt-10">
           Consult our top specialized doctors
         </h1>
@@ -108,6 +108,59 @@ const Home = () => {
               </p>
             </Link>
           </div>
+        </div>
+      </section> */}
+      <section className="px-4 sm:px-6 md:px-10 lg:px-20 xl:px-24 mb-24">
+        <h1 className="text-xl sm:text-2xl lg:text-4xl font-bold text-black mt-10 mb-2">
+          Consult our top specialized doctors
+        </h1>
+        <p className="font-medium text-gray-600">
+          Our doctors are ready to serve you 24/7
+        </p>
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 mt-14">
+          {[
+            {
+              title: "Gynecologist & Obstetrician",
+              img: gynologist,
+            },
+            {
+              title: "Medicine Specialist",
+              img: medicine,
+            },
+            {
+              title: "Cardiologist",
+              img: cardologist,
+            },
+            {
+              title: "Pediatrician",
+              img: Pediatrician,
+            },
+            {
+              title: "General Surgeon",
+              img: genarel,
+            },
+            {
+              title: "Otolaryngologists (ENT)",
+              img: Otolaryngologist,
+            },
+          ].map((item, index) => (
+            <div className="text-center" key={index}>
+              <img
+                className="mx-auto w-20 h-20 sm:w-24 sm:h-24 object-contain"
+                src={item.img}
+                alt={item.title}
+              />
+              <h3 className="mt-4 mb-2 text-lg font-bold text-gray-800">
+                {item.title}
+              </h3>
+              <Link>
+                <p className="inline-block rounded px-4 py-2 text-[#078ff7] text-sm font-medium hover:bg-[#DBEFFE] transition">
+                  Consult Now
+                </p>
+              </Link>
+            </div>
+          ))}
         </div>
       </section>
 
