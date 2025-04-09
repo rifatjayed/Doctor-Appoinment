@@ -213,9 +213,9 @@ const DoctorDetails = () => {
             <p>Select Consultation Type</p>
             <div className="mt-2">
               <button
-                onClick={() => handleConsultationChange("face")}
+                onClick={() => handleConsultationChange("   Face to Face")}
                 className={`p-2 rounded-full border mr-2 ${
-                  selected === "face"
+                  selected === "   Face to Face"
                     ? "bg-[rgb(212_237_255)] !text-[rgb(7_143_247)] border-[rgb(212_237_255)]"
                     : "bg-white text-gray-800 border-gray-200"
                 }`}
@@ -224,9 +224,9 @@ const DoctorDetails = () => {
               </button>
 
               <button
-                onClick={() => handleConsultationChange("video")}
+                onClick={() => handleConsultationChange(" Video/Audio call")}
                 className={`p-2 rounded-full border ${
-                  selected === "video"
+                  selected === " Video/Audio call"
                     ? "bg-[rgb(212_237_255)] !text-[rgb(7_143_247)] border-[rgb(212_237_255)]"
                     : "bg-white text-gray-800 border-gray-200"
                 }`}
@@ -240,9 +240,9 @@ const DoctorDetails = () => {
             <p>Appointment Type</p>
             <div className="mt-2">
               <button
-                onClick={() => handleAppointmentChange("new")}
+                onClick={() => handleAppointmentChange("  New Patient")}
                 className={`p-2 rounded-full border mr-2 ${
-                  appointment === "new"
+                  appointment === "  New Patient"
                     ? "bg-[rgb(212_237_255)] !text-[rgb(7_143_247)] border-[rgb(212_237_255)]"
                     : "bg-white text-gray-800 border-gray-200"
                 }`}
@@ -251,9 +251,9 @@ const DoctorDetails = () => {
               </button>
 
               <button
-                onClick={() => handleAppointmentChange("follow")}
+                onClick={() => handleAppointmentChange("Follow Up")}
                 className={`p-2 rounded-full border ${
-                  appointment === "follow"
+                  appointment === "Follow Up"
                     ? "bg-[rgb(212_237_255)] !text-[rgb(7_143_247)] border-[rgb(212_237_255)]"
                     : "bg-white text-gray-800 border-gray-200"
                 }`}
@@ -261,9 +261,9 @@ const DoctorDetails = () => {
                 Follow Up
               </button>
               <button
-                onClick={() => handleAppointmentChange("report")}
+                onClick={() => handleAppointmentChange(" Report Show")}
                 className={`p-2 rounded-full border ml-2 ${
-                  appointment === "report"
+                  appointment === " Report Show"
                     ? "bg-[rgb(212_237_255)] !text-[rgb(7_143_247)] border-[rgb(212_237_255)]"
                     : "bg-white text-gray-800 border-gray-200"
                 }`}

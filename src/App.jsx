@@ -3,13 +3,13 @@ import "./App.css";
 import Home from "./components/pages/Home";
 import Login from "./components/pages/Login";
 import Register from "./components/pages/Register";
-import About from "./components/pages/About";
-import Contact from "./components/pages/Contact";
+
 import FindDoctor from "./components/pages/FindDoctoctor";
 import FindAmbulance from "./components/pages/FindAmbulance";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import DoctorDetails from "./components/pages/DoctorDetails";
+import FindHospital from "./components/pages/FindHospital";
 
 const router = createBrowserRouter([
   {
@@ -22,23 +22,15 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/about",
+    path: "/findhospital",
     element: (
       <>
         <Navbar></Navbar>
-        <About></About>
+        <FindHospital></FindHospital>
       </>
     ),
   },
-  {
-    path: "/contact",
-    element: (
-      <>
-        <Navbar></Navbar>
-        <Contact></Contact>
-      </>
-    ),
-  },
+
   {
     path: "/finddoctor",
     element: (

@@ -23,7 +23,7 @@ const Hero2 = () => {
       {/* <div className="px-4 sm:px-12 md:px-24 lg:px-32 xl:px-64">
         <form action=""></form>
       </div> */}
-      <div className="mx-auto mt-6 flex items-center bg-white rounded-full shadow-lg overflow-hidden w-[90%] md:w-[50%]">
+      {/* <div className="mx-auto mt-6 flex items-center bg-white rounded-full shadow-lg overflow-hidden w-[90%] md:w-[50%]">
         <button className="px-4 py-3 text-black transition">
           <FaSearch />
         </button>
@@ -34,7 +34,23 @@ const Hero2 = () => {
           placeholder="Search doctors, hospitals, clinics..."
           className="w-full px-4 py-3 text-black border-none outline-none"
         />
-      </div>
+      </div> */}
+
+      {/* <div className="flex flex-col sm:flex-row items-center bg-white rounded-md overflow-hidden shadow">
+        <div className="flex items-center w-full sm:w-auto px-3 py-3">
+          <FaSearch className="text-gray-500 mr-2" />
+          <input
+            type="text"
+            placeholder="Search doctors"
+            className="w-full sm:w-64 px-2 py-2 text-black border-none outline-none"
+          />
+        </div>
+        <button className="w-full sm:w-auto px-6 py-3 bg-[rgb(7,143,247)] text-white font-bold capitalize hover:bg-blue-600 active:bg-blue-800 transition duration-300">
+          Search
+        </button>
+      </div> */}
+
+ 
 
       <section className="flex justify-center items-center my-20">
         <div className="grid grid-row md:grid-cols-5 gap-8 ">
@@ -51,13 +67,13 @@ const Hero2 = () => {
           </div>
           <div className="card card-compact bg-base-100 w-48 shadow-xl">
             <figure>
-              <img src={chamber} alt="Shoes" />
+              <img src={chamber} alt="" />
             </figure>
             <div className="text-center my-4 mx-2">
               <h2 className="card-title text-bold text-xl ">
-                Video Consultancy
+                Chamber Appointment
               </h2>
-              <p>Consult with best doctors through video call.</p>
+              <p>Book your appointment easily with few clicks.</p>
             </div>
           </div>
           <div className="card card-compact bg-base-100 w-48 shadow-xl">
@@ -66,9 +82,9 @@ const Hero2 = () => {
             </figure>
             <div className="text-center my-4 mx-2">
               <h2 className="card-title text-bold text-xl ">
-                Video Consultancy
+                Doctor At Your Home
               </h2>
-              <p>Consult with best doctors through video call.</p>
+              <p>Book a doctor to visit you at home.</p>
             </div>
           </div>
           <div className="card card-compact bg-base-100 w-48 shadow-xl">
@@ -77,9 +93,9 @@ const Hero2 = () => {
             </figure>
             <div className="text-center my-4 mx-2">
               <h2 className="card-title text-bold text-xl ">
-                Video Consultancy
+                Ambulance Service
               </h2>
-              <p>Consult with best doctors through video call.</p>
+              <p>24/7 Emergency Ambulance Service..</p>
             </div>
           </div>
           <div className="card card-compact bg-base-100 w-48 shadow-xl">

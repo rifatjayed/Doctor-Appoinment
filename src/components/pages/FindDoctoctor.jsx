@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 
 import doctorList from "../../Data/db2";
@@ -18,60 +18,72 @@ const FindDoctor = () => {
   const onSubmit = (data) => console.log(data);
 
   console.log(watch("example"));
+
+  const [searchTerm, setSearchTerm] = useState("");
+  const [genderFilter, setGenderFilter] = useState("");
+  const [specializationFilter, setSpecializationFilter] = useState("");
+  const [cityFilter, setCityFilter] = useState("");
+  const [consultationType, setConsultationType] = useState("");
+
   return (
     <div>
-      {/* <div className="bg-[rgb(2,49,84)] py-10 flex  justify-center">
-        <div className=" mt-6 flex items-center bg-white  overflow-hidden w-[90%] md:w-[50%]">
-          <FaSearch />
-          <input
-            type="text"
-            placeholder="Search doctors"
-            className="w-full px-4 py-3 text-black border-none outline-none"
-          />
-        </div>
+      <div className="bg-[rgb(2,49,84)] py-10 flex justify-center items-center">
+        <div className="w-[90%] md:w-[80%] lg:w-[70%] flex flex-col gap-6">
+          <div className="mt-6 flex items-center bg-white overflow-hidden w-full rounded-md flex-row">
+            <FaSearch className="text-gray-500 ml-3" />
+            <input
+              type="text"
+              placeholder="Search doctors"
+              className="w-full px-4 py-3 text-black border-none outline-none"
+            />
+            <button className="px-6 py-3 rounded-md text-base font-bold capitalize duration-300 bg-[rgb(7,143,247)] text-white hover:bg-blue-600 active:bg-blue-800">
+              Search
+            </button>
+          </div>
 
-        <button className="rounded  text-base font-bold capitalize duration-300 bg-[rgb(7,143,247)] text-white hover:bg-secondaryColor-tint-100 active:bg-secondaryColor-shade-200 px-4  ">
-          Search
-        </button>
-      </div> */}
-      {/* <div className="bg-[rgb(2,49,84)] py-10 flex justify-center">
-        <div className="mt-6 flex items-center bg-white overflow-hidden w-[90%] md:w-[50%] rounded-md">
-          <FaSearch className="text-gray-500 ml-3" />
-          <input
-            type="text"
-            placeholder="Search doctors"
-            className="w-full px-4 py-3 text-black border-none outline-none"
-          />
-        </div>
+          {/* Filters Dropdowns */}
+          <div className="flex flex-col sm:flex-row flex-wrap gap-4">
+            <select
+              className="flex-1 min-w-[140px] px-4 py-2 rounded border border-gray-300"
+              value={genderFilter}
+              onChange={(e) => setGenderFilter(e.target.value)}
+            >
+              <option value="">All Gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
 
-        <button className="ml-2 px-10 py-0  rounded-md text-base font-bold capitalize duration-300 bg-[rgb(7,143,247)] text-white hover:bg-blue-600 active:bg-blue-800">
-          Search
-        </button>
-      </div> */}
-      {/* <div className="bg-[rgb(2,49,84)] py-10 flex justify-center items-center">
-        <div className="mt-6 flex items-center bg-white overflow-hidden w-[90%] md:w-[50%] rounded-md">
-          <FaSearch className="text-gray-500 ml-3" />
-          <input
-            type="text"
-            placeholder="Search doctors"
-            className="w-full px-4 py-3 text-black border-none outline-none"
-          />
-          <button className="ml-2 px-6 h-[48px] flex items-center justify-center rounded-md text-base font-bold capitalize duration-300 bg-[rgb(7,143,247)] text-white hover:bg-blue-600 active:bg-blue-800">
-            Search
-          </button>
-        </div>
-      </div> */}
-      <div className="bg-[rgb(2,49,84)] py-10 flex justify-center items-center ">
-        <div className="mt-6 flex items-center bg-white overflow-hidden w-[90%] md:w-[50%] rounded-md flex-row">
-          <FaSearch className="text-gray-500 ml-3" />
-          <input
-            type="text"
-            placeholder="Search doctors"
-            className="w-full px-4 py-3 text-black border-none outline-none"
-          />
-          <button className="px-6 py-3 rounded-md text-base font-bold capitalize duration-300 bg-[rgb(7,143,247)] text-white hover:bg-blue-600 active:bg-blue-800">
-            Search
-          </button>
+            <select
+              className="flex-1 min-w-[140px] px-4 py-2 rounded border border-gray-300"
+              value={specializationFilter}
+              onChange={(e) => setSpecializationFilter(e.target.value)}
+            >
+              <option value="">All Specializations</option>
+              <option value="Cardiology">Cardiology</option>
+              <option value="Dermatology">Dermatology</option>
+              <option value="Neurology">Neurology</option>
+            </select>
+
+            <select
+              className="flex-1 min-w-[140px] px-4 py-2 rounded border border-gray-300"
+              value={cityFilter}
+              onChange={(e) => setCityFilter(e.target.value)}
+            >
+              <option value="">All Cities</option>
+              <option value="Dhaka">Dhaka</option>
+              <option value="Chattogram">Chattogram</option>
+            </select>
+
+            <select
+              className="flex-1 min-w-[140px] px-4 py-2 rounded border border-gray-300"
+              value={consultationType}
+              onChange={(e) => setConsultationType(e.target.value)}
+            >
+              <option value="">Any Consultation</option>
+              <option value="face">Face to Face</option>
+              <option value="video">Video/Audio</option>
+            </select>
+          </div>
         </div>
       </div>
 
@@ -116,7 +128,7 @@ const FindDoctor = () => {
                 </div>
 
                 {/* Services */}
-                <p className="flex justify-around mt-10">
+                {/* <p className="flex justify-around mt-10">
                   {doctor.services.map((service, index) => (
                     <span
                       className="bg-[rgb(248_248_250)] py-1 px-3 text-sm text-gray-700 rounded"
@@ -125,7 +137,19 @@ const FindDoctor = () => {
                       {service}
                     </span>
                   ))}
-                </p>
+                </p> */}
+
+                <div className="flex flex-wrap gap-2 justify-start mt-6">
+                  {doctor.services.map((service, index) => (
+                    <span
+                      key={index}
+                      className="bg-[rgb(248_248_250)] py-1 px-3 text-sm text-gray-700 rounded"
+                    >
+                      {service}
+                    </span>
+                  ))}
+                </div>
+
                 <hr className="border border-gray-200 my-6" />
                 {/* Booking Area */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-end mt-6 space-y-4 sm:space-y-0 sm:space-x-4">

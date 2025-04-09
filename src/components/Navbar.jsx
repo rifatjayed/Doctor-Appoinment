@@ -97,17 +97,14 @@ const Navbar = () => {
           <Link to="/" className="hover:text-blue-400 transition">
             Home
           </Link>
-          <Link to="/about" className="hover:text-blue-400 transition">
-            About
+          <Link to="/findhospital" className="hover:text-blue-400 transition">
+            Find Hospital
           </Link>
           <Link to="/finddoctor" className="hover:text-blue-400 transition">
             Find Doctor
           </Link>
           <Link to="/findambulance" className="hover:text-blue-400 transition">
             Find Ambulance
-          </Link>
-          <Link to="/contact" className="hover:text-blue-400 transition">
-            Contact
           </Link>
         </div>
 
