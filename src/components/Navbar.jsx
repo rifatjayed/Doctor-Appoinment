@@ -156,12 +156,19 @@ const Navbar = () => {
             >
               Home
             </Link>
-            <Link
+            {/* <Link
               to="/about"
               onClick={() => setMenuOpen(false)}
               className="hover:text-blue-400 transition"
             >
               About
+            </Link> */}
+            <Link
+              to="/findhospital"
+              onClick={() => setMenuOpen(false)}
+              className="hover:text-blue-400 transition"
+            >
+              Find Hospital
             </Link>
             <Link
               to="/finddoctor"
@@ -176,13 +183,6 @@ const Navbar = () => {
               className="hover:text-blue-400 transition"
             >
               Find Ambulance
-            </Link>
-            <Link
-              to="/contact"
-              onClick={() => setMenuOpen(false)}
-              className="hover:text-blue-400 transition"
-            >
-              Contact
             </Link>
           </ul>
         </div>
