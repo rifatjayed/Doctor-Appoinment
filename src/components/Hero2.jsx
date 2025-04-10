@@ -133,7 +133,7 @@ const Hero2 = () => {
       {/* Title */}
       <div className="text-center">
         <h1 className="text-[#023154] font-bold text-4xl w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-2">
-          Book a Doctor's Appointment in Just 10 Minutes with Sasthya Seba.
+          Book a Doctor's Appointment in Just 10 Minutes with Sasthya Daktar.
         </h1>
         <h2 className="mt-2 text-lg font-normal text-[rgb(57,67,77)] text-center w-full px-8 sm:px-12 md:px-16 lg:px-24 xl:px-32">
           Say goodbye to endless phone calls and long queues. Book doctors'

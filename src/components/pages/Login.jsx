@@ -37,10 +37,10 @@ const Login = () => {
     //   </form>
     // </div>
 
-    <div className="flex justify-center items-center h-screen ">
+    <div className="flex justify-center items-center h-screen bg-[rgb(248_248_250)]">
       <div className="bg-white p-8 rounded-lg shadow-lg w-96">
         <h2 className="text-2xl font-bold text-center text-gray-700 mb-6">
-          Login
+          Login to Sasthya Daktar
         </h2>
         <form onSubmit={handleSubmit(onSubmit)}>
           {/* Email Field */}
@@ -78,8 +78,12 @@ const Login = () => {
           >
             Login
           </button>
-          <p>
-            Don’t have an account? <span>Register</span>
+          <p
+            className="text-[rgb(77_90_104_/_0.8)] mt-6 text-center text-sm font-medium 
+"
+          >
+            Don’t have an account?{" "}
+            <span className="text-blue-600">Register</span>
           </p>
         </form>
       </div>

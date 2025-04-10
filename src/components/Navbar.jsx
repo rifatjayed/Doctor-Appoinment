@@ -77,7 +77,7 @@ import { Link } from "react-router"; //
 import { FaRegUser } from "react-icons/fa";
 import { HiOutlineMenu, HiX } from "react-icons/hi"; //
 
-import heroIcon from "../assets/img/Medinova.png";
+import heroIcon from "../assets/img/sasthyo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -88,8 +88,8 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center">
         {/* Left Side - Logo */}
         <Link to="/" className="flex items-center space-x-2">
-          <img src={heroIcon} alt="Medica" className="w-[50px]" />
-          <p className="text-2xl font-bold text-blue-400">Medica</p>
+          <img src={heroIcon} alt="Medica" className="w-[100px]" />
+          {/* <p className="text-2xl font-bold text-blue-400">Medica</p> */}
         </Link>
 
         {/* Center - Menu Links */}

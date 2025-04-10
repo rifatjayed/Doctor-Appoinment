@@ -107,11 +107,12 @@ const DoctorDetails = () => {
           {/* Services */}
           <div className="mt-8">
             <p className="mb-2 font-medium text-gray-700">Services For:</p>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2">
+
+            <div className="flex flex-wrap gap-2 justify-start mt-6">
               {doctor.services.map((service, index) => (
                 <span
                   key={index}
-                  className="bg-[rgb(248_248_250)] py-1 px-3 text-sm text-gray-700 rounded text-center items-center"
+                  className="bg-[rgb(248_248_250)] py-1 px-3 text-sm text-gray-700 rounded"
                 >
                   {service}
                 </span>

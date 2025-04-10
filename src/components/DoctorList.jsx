@@ -5,17 +5,6 @@ const DoctorList = () => {
     <div>
       <div className="bg-[rgb(2,49,84)] py-10 flex justify-center items-center  ">
         <div className="">
-          {/* <div className="mt-6 flex items-center overflow-hidden w-[90%] md:w-[50%] rounded-md flex-row">
-            <FaSearch className="text-gray-500 ml-3" />
-            <input
-              type="text"
-              placeholder="Search doctors"
-              className="w-full px-4 py-3 text-black border-none outline-none"
-            />
-            <button className="px-6 py-3 rounded-md text-base font-bold capitalize duration-300 bg-[rgb(7,143,247)] text-white hover:bg-blue-600 active:bg-blue-800">
-              Search
-            </button>
-          </div> */}
           <div className="mt-6 w-[90%] md:w-[50%] mx-auto">
             <div className="flex items-center bg-white rounded-md overflow-hidden shadow-md">
               <div className="pl-4 text-gray-500">
