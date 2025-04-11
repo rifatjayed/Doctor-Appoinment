@@ -14,13 +14,6 @@ import { Link } from "react-router";
 const Home = () => {
   return (
     <div className=" ">
-      {/* <div className=" ">
-        <Navbar></Navbar>
-
-        <div className="">
-          <Hero2></Hero2>
-        </div>
-      </div> */}
       <div className="min-h-screen flex flex-col">
         {/* Navbar */}
         <Navbar />
@@ -31,85 +24,6 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Find by Speciality  section */}
-
-      {/* <section className="px-[40px] md:px-[100px] mb-[100px]">
-        <h1 className="text-md text-xl sm:text-2xl font-bold lg:text-4xl mb-2 block text-black mt-10">
-          Consult our top specialized doctors
-        </h1>
-        <p className="font-medium text-black-tint-400">
-          Our doctors are ready to serve you 24/7
-        </p>
-        <div className="grid grid-cols-2 md:grid-cols-6 gap-4 mt-14">
-          <div className="text-center">
-            <img className="mx-auto" src={gynologist} alt="" />
-            <h3 className="mb-2 text-lg font-bold text-primaryColor-shade-200">
-              Gynecologist & Obstetrician
-            </h3>
-            <Link>
-              <p className="inline-block rounded px-6 py-2 text-[#078ff7] hover:bg-[#DBEFFE]">
-                Consult Now
-              </p>
-            </Link>
-          </div>
-
-          <div className="text-center">
-            <img className="mx-auto" src={medicine} alt="" />
-            <h3 className="mb-2 text-lg font-bold text-primaryColor-shade-200">
-              Medicine Specialist
-            </h3>
-            <Link>
-              <p className="inline-block rounded px-6 py-2 text-[#078ff7] hover:bg-[#DBEFFE]">
-                Consult Now
-              </p>
-            </Link>
-          </div>
-          <div className="text-center">
-            <img className="mx-auto" src={cardologist} alt="" />
-            <h3 className="mb-2 text-lg font-bold text-primaryColor-shade-200">
-              Cardiologist
-            </h3>
-            <Link>
-              <p className="inline-block rounded px-6 py-2 text-[#078ff7] hover:bg-[#DBEFFE]">
-                Consult Now
-              </p>
-            </Link>
-          </div>
-          <div className="text-center">
-            <img className="mx-auto" src={Pediatrician} alt="" />
-            <h3 className="mb-2 text-lg font-bold text-primaryColor-shade-200">
-              Pediatrician
-            </h3>
-            <Link>
-              <p className="inline-block rounded px-6 py-2 text-[#078ff7] hover:bg-[#DBEFFE]">
-                Consult Now
-              </p>
-            </Link>
-          </div>
-          <div className="text-center">
-            <img className="mx-auto" src={genarel} alt="" />
-            <h3 className="mb-2 text-lg font-bold text-primaryColor-shade-200">
-              General Surgeon
-            </h3>
-            <Link>
-              <p className="inline-block rounded px-6 py-2 text-[#078ff7] hover:bg-[#DBEFFE]">
-                Consult Now
-              </p>
-            </Link>
-          </div>
-          <div className="text-center">
-            <img className="mx-auto" src={Otolaryngologist} alt="" />
-            <h3 className="mb-2 text-lg font-bold text-primaryColor-shade-200">
-              Otolaryngologists (ENT)
-            </h3>
-            <Link>
-              <p className="inline-block rounded px-6 py-2 text-[#078ff7] hover:bg-[#DBEFFE]">
-                Consult Now
-              </p>
-            </Link>
-          </div>
-        </div>
-      </section> */}
       <section className="px-4 sm:px-6 md:px-10 lg:px-20 xl:px-24 mb-24">
         <h1 className="text-xl sm:text-2xl lg:text-4xl font-bold text-black mt-10 mb-2">
           Consult our top specialized doctors
@@ -165,13 +79,17 @@ const Home = () => {
       </section>
 
       <section className="bg-[#023154] md:mx-15">
-        <div className="flex  flex-col md:flew-row items-center  md:mx-15 py-15">
+        <div className="flex  flex-col md:flex-row md:mx-15 py-15 items-center  ">
           <div className="w-5/6 md:w-3/5  items-center">
             <h1 className=" font-bold text-[#62E2EA] text-2xl md:text-3xl lg:text-4xl 2xl:text-6xl 3xl:text-7xl 4xl:text-7xl block mb-2 5xl:text-6xl">
-              Need some advice from our experts?
+              Need some advice from <br /> our experts?
             </h1>
-            <p className=" text-base font-normal lg:text-lg block text-black-tint-800 mb-6 md:mb-10 text-black-tint-1000 text-white">
+            <p className=" text-base font-normal lg:text-lg block text-black-tint-800 mb-6 md:mb-10  text-white">
               Request a call back now!
+            </p>
+            <p className=" text-base font-normal lg:text-lg block text-black-tint-800 mb-6 md:mb-10  text-white">
+              The quickest way to get in contact is to <br /> telephone: 09611
+              530 530, 01405 600 700
             </p>
           </div>
           <div className="w-5/6 md:w-2/5">

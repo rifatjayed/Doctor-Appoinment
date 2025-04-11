@@ -72,17 +72,29 @@
 
 // export default Navbar;
 
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router"; //
 import { FaRegUser } from "react-icons/fa";
 import { HiOutlineMenu, HiX } from "react-icons/hi"; //
 
 import heroIcon from "../assets/img/sasthyo.png";
+import { AuthContext } from "../Context/AuthProvider";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+
   const [isOpen, setIsOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false); // ✅
 
+  const handleLogOut = () => {
+    logOut()
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <nav className="relative bg-white text-black py-4 px-6 shadow-md w-full top-0 z-50 ">
       <div className="container mx-auto flex justify-between items-center">
@@ -112,9 +124,26 @@ const Navbar = () => {
         <div className="flex items-center space-x-4">
           {/* User Icon with Dropdown */}
           <div className="relative">
-            <button onClick={() => setIsOpen(!isOpen)} className="text-[25px]">
-              <FaRegUser />
-            </button>
+            {user ? (
+              <>
+                <Link
+                  onClick={() => setIsOpen(!isOpen)}
+                  className="text-[18px]"
+                >
+                  <p>{user.displayName}</p>
+                </Link>
+              </>
+            ) : (
+              <>
+                <button
+                  onClick={() => setIsOpen(!isOpen)}
+                  className="text-[25px]"
+                >
+                  <FaRegUser />
+                </button>
+              </>
+            )}
+
             {isOpen && (
               <div className="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-lg p-2">
                 <ul className="text-black flex flex-col">
@@ -124,12 +153,37 @@ const Navbar = () => {
                   <Link className="px-3 py-2 hover:bg-gray-200 rounded-lg cursor-pointer">
                     Dashboard
                   </Link>
-                  <Link
+
+                  {/* aikahne update menu bosabo */}
+                  {user ? (
+                    <>
+                      {/* <p>{user.displayName}</p> */}
+                      <button
+                        onClick={handleLogOut}
+                        className="inline-block text-base font-semibold py-2 px-3 uppercase"
+                      >
+                        LogOut{" "}
+                      </button>
+                    </>
+                  ) : (
+                    <>
+                      <Link to="/login">
+                        <button className="inline-block text-base font-semibold py-2 px-3 uppercase">
+                          LogIn{" "}
+                        </button>
+                      </Link>
+                    </>
+                  )}
+                  {/* aikahne update menu bosabo */}
+
+                  {/* aita puran menu */}
+                  {/* <Link
                     to="/login"
                     className="px-3 py-2 hover:bg-gray-200 rounded-lg cursor-pointer"
                   >
                     Login
-                  </Link>
+                  </Link> */}
+                  {/* aita puran menu */}
                 </ul>
               </div>
             )}

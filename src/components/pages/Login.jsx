@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import { AuthContext } from "../../Context/AuthProvider";
 
 import { useForm } from "react-hook-form";
+import { Link, useNavigate } from "react-router";
+import googleicon from "../../assets/img/search.png";
 
 const Login = () => {
   // const {
@@ -13,14 +16,45 @@ const Login = () => {
   // const onSubmit = (data) => console.log(data);
 
   // console.log(watch("example"));
+
+  const { signInUser, signInWithGoogle } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const [error, setError] = useState();
+  const [success, setSuccess] = useState();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
+  const onSubmit = (e, data) => {
     console.log("Login Data:", data);
+    e.preventDefault();
+
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    signInUser(email, password)
+      .then((result) => {
+        console.log(result.user);
+
+        setSuccess("Login done");
+        e.target.reset();
+        navigate("/");
+      })
+      .catch((error) => {
+        setError("error khyse re");
+        console.log(error);
+      });
+  };
+  const handleGoogleSign = () => {
+    signInWithGoogle()
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
   return (
     // <div>
@@ -83,9 +117,18 @@ const Login = () => {
 "
           >
             Don’t have an account?{" "}
-            <span className="text-blue-600">Register</span>
+            <span>
+              <Link className="text-blue-600" to="/register">
+                Register
+              </Link>{" "}
+            </span>
           </p>
         </form>
+        <div className="flex justify-center mt-4 mb-10">
+          <button onClick={handleGoogleSign} className="">
+            <img className="w-[30px]" src={googleicon} alt="" />
+          </button>
+        </div>
       </div>
     </div>
   );
