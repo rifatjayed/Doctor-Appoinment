@@ -21,6 +21,7 @@ const Login = () => {
   const navigate = useNavigate();
   const [error, setError] = useState();
   const [success, setSuccess] = useState();
+
   const {
     register,
     handleSubmit,
@@ -50,6 +51,7 @@ const Login = () => {
   const handleGoogleSign = () => {
     signInWithGoogle()
       .then((result) => {
+        navigate("/");
         console.log(result);
       })
       .catch((error) => {

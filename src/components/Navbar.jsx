@@ -130,7 +130,7 @@ const Navbar = () => {
                   onClick={() => setIsOpen(!isOpen)}
                   className="text-[18px]"
                 >
-                  {/* <p>{user.displayName}</p> */}
+                  <p>{user.displayName}</p>
                   <img
                     className="w-[40%] rounded-full"
                     src={user.photoURL}

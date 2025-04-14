@@ -119,6 +119,14 @@ const DoctorDetails = () => {
               ))}
             </div>
           </div>
+          <hr className="border border-gray-200 my-4" />
+          <div className="mt-5">
+            <h2 className="text-[rgb(4_81_140/0.7)] text-sm font-bold">
+              About
+            </h2>
+
+            <p className="text-gray-700 text-sm">{doctor.about}</p>
+          </div>
 
           {/* Locations */}
           <div className="mt-8 bg-white rounded-lg p-4 sm:p-6 md:p-8 shadow-sm">
@@ -143,8 +151,10 @@ const DoctorDetails = () => {
 
                   <div className="flex items-center gap-2 text-sm text-gray-600">
                     <FaRegClock className="text-lg text-green-600" />
+
                     <p>
-                      {doctor.availability || "Availability info not available"}
+                      {cham.availability}
+                      {/* {doctor.availability || "Availability info not available"} */}
                     </p>
                   </div>
                 </div>

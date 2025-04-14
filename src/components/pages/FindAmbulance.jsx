@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import bgImg from "../../assets/img/ambulancebg.webp";
 import { HiMiniChevronRight } from "react-icons/hi2";
 import ambulance1 from "../../assets/img/ac-ambulance.webp";
@@ -12,6 +12,7 @@ import { RiCheckDoubleLine } from "react-icons/ri";
 import { useForm } from "react-hook-form";
 
 const FindAmbulance = () => {
+  const [showModal, setShowModal] = useState(false);
   const {
     register,
     handleSubmit,
@@ -19,9 +20,11 @@ const FindAmbulance = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    setShowModal(true);
 
-  console.log(watch("example"));
+    console.log(data);
+  };
 
   return (
     <div className=" mx-[40px] md:mx-[80px]">
@@ -472,6 +475,40 @@ const FindAmbulance = () => {
           </div>
         </div>
       </div>
+
+      {showModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-xl p-6 w-[90%] max-w-md text-center shadow-lg">
+            <svg
+              className="w-12 h-12 text-green-500 mx-auto mb-4"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M5 13l4 4L19 7"
+              />
+            </svg>
+
+            <h2 className="text-2xl font-semibold text-green-700 mb-2">
+              Ambulance Request Sent!
+            </h2>
+            <p className="text-gray-600 mb-6">
+              Thank you! Please wait for confirmation from the Admin.
+            </p>
+
+            <button
+              onClick={() => setShowModal(false)}
+              className="mt-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded"
+            >
+              OK
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
