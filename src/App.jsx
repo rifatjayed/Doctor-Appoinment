@@ -66,6 +66,7 @@ const router = createBrowserRouter([
       <>
         <Navbar></Navbar>
         <Login></Login>
+        <Footer></Footer>
       </>
     ),
   },
@@ -73,7 +74,9 @@ const router = createBrowserRouter([
     path: "/register",
     element: (
       <>
+        <Navbar></Navbar>
         <Register></Register>
+        <Footer></Footer>
       </>
     ),
   },

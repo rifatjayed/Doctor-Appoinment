@@ -6,7 +6,6 @@ import cardologist from "../../assets/img/cardiologist.webp";
 import Pediatrician from "../../assets/img/pediatrician.webp";
 import genarel from "../../assets/img/general-surgeon.webp";
 import Otolaryngologist from "../../assets/img/otolaryngologists-ent.webp";
-import { FaSearch } from "react-icons/fa";
 
 import Hero2 from "../Hero2";
 import { Link } from "react-router";

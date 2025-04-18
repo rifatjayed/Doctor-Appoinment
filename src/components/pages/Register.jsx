@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router";
+import { AuthContext } from "../../Context/AuthProvider";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Register = () => {
+  const navigate = useNavigate();
+  const { createUser } = useContext(AuthContext);
+  console.log(createUser);
+
   const {
     register,
     handleSubmit,
@@ -11,8 +19,24 @@ const Register = () => {
 
   const onSubmit = (data) => {
     reset();
+
+    const { email, password } = data;
+
+    createUser(email, password)
+      .then((result) => {
+        toast.success("User created successfully!");
+        navigate("/");
+        console.log(result.user);
+      })
+      .catch((error) => {
+        toast.error("Something went wrong!");
+
+        console.log(error);
+      });
+
     console.log("Register Data:", data);
   };
+
   return (
     <div>
       <div className="flex justify-center items-center h-screen ">
@@ -83,6 +107,7 @@ const Register = () => {
           </form>
         </div>
       </div>
+      <ToastContainer position="top-right" autoClose={3000} />
     </div>
   );
 };
