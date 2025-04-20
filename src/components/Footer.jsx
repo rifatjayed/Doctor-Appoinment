@@ -6,7 +6,7 @@ import { Link } from "react-router";
 const Footer = () => {
   return (
     <div>
-      <footer className="footer bg-[rgb(2,49,84)] sm:footer-horizontal mt-10 text-white p-10">
+      <footer className="footer bg-[rgb(2,49,84)] sm:footer-horizontal  text-white p-10">
         <aside className="w-70">
           <Link to="/" className="flex items-center space-x-2">
             <img src={FooterIcon} alt="" className="w-[150px]" />

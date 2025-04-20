@@ -37,9 +37,9 @@ const Navbar = () => {
           <Link to="/" className="hover:text-blue-400 transition">
             Home
           </Link>
-          <Link to="/findhospital" className="hover:text-blue-400 transition">
+          {/* <Link to="/findhospital" className="hover:text-blue-400 transition">
             Find Hospital
-          </Link>
+          </Link> */}
           <Link to="/finddoctor" className="hover:text-blue-400 transition">
             Find Doctor
           </Link>
@@ -130,20 +130,14 @@ const Navbar = () => {
             >
               Home
             </Link>
+
             {/* <Link
-              to="/about"
-              onClick={() => setMenuOpen(false)}
-              className="hover:text-blue-400 transition"
-            >
-              About
-            </Link> */}
-            <Link
               to="/findhospital"
               onClick={() => setMenuOpen(false)}
               className="hover:text-blue-400 transition"
             >
               Find Hospital
-            </Link>
+            </Link> */}
             <Link
               to="/finddoctor"
               onClick={() => setMenuOpen(false)}

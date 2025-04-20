@@ -477,10 +477,10 @@ const FindAmbulance = () => {
       </div>
 
       {showModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div className="fixed inset-0 bg-white bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white rounded-xl p-6 w-[90%] max-w-md text-center shadow-lg">
             <svg
-              className="w-12 h-12 text-green-500 mx-auto mb-4"
+              className="w-12 h-12 text-blue-500 mx-auto mb-4"
               fill="none"
               stroke="currentColor"
               strokeWidth="2"
@@ -493,18 +493,19 @@ const FindAmbulance = () => {
               />
             </svg>
 
-            <h2 className="text-2xl font-semibold text-green-700 mb-2">
-              Ambulance Request Sent!
+            <h2 className="text-lg font-bold text-black  mb-2">
+              Your request has been submitted successfully.
             </h2>
-            <p className="text-gray-600 mb-6">
-              Thank you! Please wait for confirmation from the Admin.
+            <p className="text-xs text-gray-600 mb-6">
+              One of our agent will get back to you within 30 minutes with the
+              update of the ambulance.
             </p>
 
             <button
               onClick={() => setShowModal(false)}
-              className="mt-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded"
+              className="mt-2  bg-[rgb(7_143_247)] bg-opacity-100 hover:bg-blue-700 text-white px-5 py-3 rounded font-bold"
             >
-              OK
+              Return to Website
             </button>
           </div>
         </div>

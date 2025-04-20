@@ -268,7 +268,7 @@ const FindDoctor = () => {
             ))}
           </div> */}
 
-          <div className="flex justify-center items-center mt-8 space-x-2">
+          <div className="flex justify-center items-center my-8 space-x-2">
             {/* Previous Button */}
             <button
               onClick={() => handlePageChange(currentPage - 1)}
