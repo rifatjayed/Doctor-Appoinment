@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import DoctorDetails from "./components/pages/DoctorDetails";
 import FindHospital from "./components/pages/FindHospital";
+import Profile from "./components/pages/Profile";
 
 const router = createBrowserRouter([
   {
@@ -70,6 +71,18 @@ const router = createBrowserRouter([
       </>
     ),
   },
+  {
+    path: "/profile",
+    element: (
+      <>
+        <Navbar></Navbar>
+        <Profile></Profile>
+        <Footer></Footer>
+      </>
+    ),
+  },
+
+  ,
   {
     path: "/register",
     element: (

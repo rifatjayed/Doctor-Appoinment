@@ -64,7 +64,10 @@ const Navbar = () => {
             {isOpen && (
               <div className="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-lg p-2">
                 <ul className="text-black flex flex-col">
-                  <Link className="px-3 py-2 hover:bg-gray-200 rounded-lg cursor-pointer">
+                  <Link
+                    to="/profile"
+                    className="px-3 py-2 hover:bg-gray-200 rounded-lg cursor-pointer"
+                  >
                     Profile
                   </Link>
                   <Link className="px-3 py-2 hover:bg-gray-200 rounded-lg cursor-pointer">
