@@ -70,9 +70,6 @@ const Navbar = () => {
                   >
                     Profile
                   </Link>
-                  <Link className="px-3 py-2 hover:bg-gray-200 rounded-lg cursor-pointer">
-                    Dashboard
-                  </Link>
 
                   {/* aikahne update menu bosabo */}
                   {user ? (
