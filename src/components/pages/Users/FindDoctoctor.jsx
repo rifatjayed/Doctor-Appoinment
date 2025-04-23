@@ -15,8 +15,10 @@ const FindDoctor = () => {
     doctors,
     updateFilter,
     filters,
+    setFilters,
     uniqueConsultationTypes,
     uniqueCities,
+    uniqueSpecializations,
   } = useContext(DoctorContext);
   const {
     register,
@@ -38,22 +40,14 @@ const FindDoctor = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const doctorsPerPage = 6;
 
-  const specializations = [
-    ...new Set(
-      doctors
-        .map((doc) => doc.specialization)
-        .filter((spec) => spec && spec.trim() !== "")
-    ),
-  ];
-
-  // const cities = [
+  // const specializations = [
   //   ...new Set(
   //     doctors
-  //       .map((doc) => doc.location)
-  //       .filter((city) => city && city.trim() !== "")
+  //       .map((doc) => doc.specialization)
+  //       .filter((spec) => spec && spec.trim() !== "")
   //   ),
   // ];
-  // Pagination calculation
+
   const indexOfLastDoctor = currentPage * doctorsPerPage;
   const indexOfFirstDoctor = indexOfLastDoctor - doctorsPerPage;
   const currentDoctors = doctors.slice(indexOfFirstDoctor, indexOfLastDoctor);
@@ -95,17 +89,6 @@ const FindDoctor = () => {
 
             {/* <select
               className="flex-1 min-w-[140px] px-4 py-2 rounded border border-gray-300 text-white"
-              value={specializationFilter}
-              placeholder="Specialization"
-              onChange={(e) => updateFilter("specialization", e.target.value)}
-            >
-              <option value="">All Specializations</option>
-              <option value="Cardiology">Cardiology</option>
-              <option value="Dermatology">Dermatology</option>
-              <option value="Neurology">Neurology</option>
-            </select> */}
-            <select
-              className="flex-1 min-w-[140px] px-4 py-2 rounded border border-gray-300 text-white"
               value={filters.specialization}
               onChange={(e) => updateFilter("specialization", e.target.value)}
             >
@@ -115,18 +98,21 @@ const FindDoctor = () => {
                   {spec}
                 </option>
               ))}
-            </select>
-
-            {/* <select
-              className="flex-1 min-w-[140px] px-4 py-2 rounded border border-gray-300 text-white"
-              value={cityFilter}
-              placeholder="City"
-              onChange={(e) => updateFilter("city", e.target.value)}
-            >
-              <option value="">All Cities</option>
-              <option value="Dhaka">Dhaka</option>
-              <option value="Chattogram">Chattogram</option>
             </select> */}
+            <select
+              value={filters.specialization}
+              onChange={(e) =>
+                setFilters({ ...filters, specialization: e.target.value })
+              }
+              className="p-2 border rounded"
+            >
+              <option value="">All Specializations</option>
+              {uniqueSpecializations.map((specialization) => (
+                <option key={specialization} value={specialization}>
+                  {specialization}
+                </option>
+              ))}
+            </select>
 
             <select
               name="city"
@@ -296,13 +282,13 @@ const FindDoctor = () => {
                   </div>
                   <div className="sm:ml-6 text-center sm:text-left">
                     <Link
-                      to={`/doctor/${doctor.id}`}
+                      to={`/doctor/${doctor._id}`}
                       className=" text-lg font-semibold text-gray-800 hover:text-blue-600"
                     >
                       {doctor.name}
                     </Link>
                     <h3 className="text-sm text-gray-600">
-                      {doctor.degrees.join(", ")}
+                      {doctor.degree.join(", ")}
                     </h3>
                     <h3 className="text-sm text-gray-600">
                       {doctor.specialization}

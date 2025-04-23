@@ -12,7 +12,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false); // ✅
 
-  console.log(user);
+  // console.log(user);
 
   const handleLogOut = () => {
     logOut()

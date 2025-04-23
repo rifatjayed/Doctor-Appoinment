@@ -1,16 +1,19 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useParams } from "react-router";
 // import doctorProImg from "../../assets/img/dctrpro.jpg";
 import doctorProImg from "../../../assets/img/dctrpro.jpg";
 
 import { FaRegHospital, FaMapMarkerAlt, FaRegClock } from "react-icons/fa";
 
-import doctorList from "../../../Data/db2";
+// import doctorList from "../../../Data/db2";
+import { DoctorContext } from "../../../Context/DoctorProvider";
 
 const DoctorDetails = () => {
   const [selected, setSelected] = useState("");
   const [appointment, setAppointment] = useState("");
   const [showModal, setShowModal] = useState(false);
+
+  const { doctors } = useContext(DoctorContext);
 
   // new
   const [selectedLocationIndex, setSelectedLocationIndex] = useState(null);
@@ -56,7 +59,7 @@ const DoctorDetails = () => {
 
   const { id } = useParams();
   console.log(id);
-  const doctor = doctorList.find((doc) => doc.id === id);
+  const doctor = doctors.find((doc) => doc._id === id);
   if (!doctor)
     return <p className="text-center text-red-600 mt-10">Doctor not found</p>;
 
@@ -76,7 +79,7 @@ const DoctorDetails = () => {
                 {doctor.name}
               </h3>
               <h4 className="text-sm text-gray-600">
-                {doctor.degrees.join(", ")}
+                {doctor.degree.join(", ")}
               </h4>
               <h4 className="text-sm text-gray-600">{doctor.specialization}</h4>
               <h4 className="text-sm text-gray-600">
@@ -179,7 +182,9 @@ const DoctorDetails = () => {
               <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
                 {doctor.education.map((edu, index) => (
                   <li key={index}>
-                    <span className="font-medium">{edu}</span>
+                    <span className="font-medium">{edu.degree}</span>
+                    <span className="font-medium">{edu.institution}</span>
+                    <span className="font-medium">{edu.year}</span>
                   </li>
                 ))}
               </ul>
