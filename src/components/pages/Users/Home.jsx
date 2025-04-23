@@ -1,13 +1,13 @@
 import React from "react";
-import Navbar from "../Navbar";
-import gynologist from "../../assets/img/gynecologist-obstetrician.webp";
-import medicine from "../../assets/img/medicine-specialist.webp";
-import cardologist from "../../assets/img/cardiologist.webp";
-import Pediatrician from "../../assets/img/pediatrician.webp";
-import genarel from "../../assets/img/general-surgeon.webp";
-import Otolaryngologist from "../../assets/img/otolaryngologists-ent.webp";
+import Navbar from "../../Navbar";
+import gynologist from "../../../assets/img/gynecologist-obstetrician.webp";
+import medicine from "../../../assets/img/medicine-specialist.webp";
+import cardologist from "../../../assets/img/cardiologist.webp";
+import Pediatrician from "../../../assets/img/pediatrician.webp";
+import genarel from "../../../assets/img/general-surgeon.webp";
+import Otolaryngologist from "../../../assets/img/otolaryngologists-ent.webp";
 
-import Hero2 from "../Hero2";
+import Hero2 from "../../Hero2";
 import { Link } from "react-router";
 
 const Home = () => {

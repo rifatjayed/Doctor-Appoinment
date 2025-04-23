@@ -71,10 +71,8 @@ const Navbar = () => {
                     Profile
                   </Link>
 
-                  {/* aikahne update menu bosabo */}
                   {user ? (
                     <>
-                      {/* <p>{user.displayName}</p> */}
                       <button
                         onClick={handleLogOut}
                         className="inline-block text-base font-semibold py-2 px-3 uppercase"
@@ -91,16 +89,6 @@ const Navbar = () => {
                       </Link>
                     </>
                   )}
-                  {/* aikahne update menu bosabo */}
-
-                  {/* aita puran menu */}
-                  {/* <Link
-                    to="/login"
-                    className="px-3 py-2 hover:bg-gray-200 rounded-lg cursor-pointer"
-                  >
-                    Login
-                  </Link> */}
-                  {/* aita puran menu */}
                 </ul>
               </div>
             )}

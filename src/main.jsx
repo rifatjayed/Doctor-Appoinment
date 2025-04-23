@@ -5,11 +5,14 @@ import "./index.css";
 // import { BrowserRouter } from "react-router";
 import App from "./App.jsx";
 import AuthProvider from "./Context/AuthProvider.jsx";
+import DoctorProvider from "./Context/DoctorProvider.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <AuthProvider>
-      <App />
+      <DoctorProvider>
+        <App />
+      </DoctorProvider>
     </AuthProvider>
   </StrictMode>
 );

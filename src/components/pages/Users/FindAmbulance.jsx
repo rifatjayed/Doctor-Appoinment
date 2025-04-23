@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import bgImg from "../../assets/img/ambulancebg.webp";
+import bgImg from "../../../assets/img/ambulancebg.webp";
 import { HiMiniChevronRight } from "react-icons/hi2";
-import ambulance1 from "../../assets/img/ac-ambulance.webp";
-import acls1 from "../../assets/img/acls-ambulance-service (1).webp";
-import acls2 from "../../assets/img/acls-ambulance-service.webp";
-import airAmbulance1 from "../../assets/img/air-ambulance (1).webp";
-import airAmbulance from "../../assets/img/air-ambulance.webp";
-import freezingAmbulance from "../../assets/img/freezing-ambulance (1).webp";
-import freezingAmbulance1 from "../../assets/img/freezing-ambulance.webp";
+import ambulance1 from "../../../assets/img/ac-ambulance.webp";
+import acls1 from "../../../assets/img/acls-ambulance-service (1).webp";
+import acls2 from "../../../assets/img/acls-ambulance-service.webp";
+import airAmbulance1 from "../../../assets/img/air-ambulance (1).webp";
+import airAmbulance from "../../../assets/img/air-ambulance.webp";
+import freezingAmbulance from "../../../assets/img/freezing-ambulance (1).webp";
+import freezingAmbulance1 from "../../../assets/img/freezing-ambulance.webp";
 import { RiCheckDoubleLine } from "react-icons/ri";
 import { useForm } from "react-hook-form";
 
@@ -503,7 +503,7 @@ const FindAmbulance = () => {
 
             <button
               onClick={() => setShowModal(false)}
-              className="mt-2  bg-[rgb(7_143_247)] bg-opacity-100 hover:bg-blue-700 text-white px-5 py-3 rounded font-bold"
+              className="mt-2  bg-[rgb(7_143_247)] bg-opacity-100 hover:bg-blue-700 text-white px-5 py-3/.. rounded font-bold"
             >
               Return to Website
             </button>

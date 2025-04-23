@@ -1,16 +1,17 @@
 import { createBrowserRouter, RouterProvider } from "react-router";
 import "./App.css";
-import Home from "./components/pages/Home";
-import Login from "./components/pages/Login";
-import Register from "./components/pages/Register";
+import Home from "./components/pages/Users/Home";
+import Login from "./components/pages/Users/Login";
+import Register from "./components/pages/Users/Register";
 
-import FindDoctor from "./components/pages/FindDoctoctor";
-import FindAmbulance from "./components/pages/FindAmbulance";
+import FindDoctor from "./components/pages/Users/FindDoctoctor";
+import FindAmbulance from "./components/pages/Users/FindAmbulance";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
-import DoctorDetails from "./components/pages/DoctorDetails";
-import FindHospital from "./components/pages/FindHospital";
-import Profile from "./components/pages/Profile";
+import DoctorDetails from "./components/pages/Users/DoctorDetails";
+import FindHospital from "./components/pages/Users/FindHospital";
+import Profile from "./components/pages/Users/Profile";
+import AdminDashboard from "./components/pages/Admin/Dashboard";
 
 const router = createBrowserRouter([
   {
@@ -90,6 +91,14 @@ const router = createBrowserRouter([
         <Navbar></Navbar>
         <Register></Register>
         <Footer></Footer>
+      </>
+    ),
+  },
+  {
+    path: "/admin",
+    element: (
+      <>
+        <AdminDashboard></AdminDashboard>
       </>
     ),
   },

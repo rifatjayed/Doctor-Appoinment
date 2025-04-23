@@ -1,9 +1,9 @@
 import React, { useContext, useState } from "react";
-import { AuthContext } from "../../Context/AuthProvider";
+import { AuthContext } from "../../../Context/AuthProvider";
 
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router";
-import googleicon from "../../assets/img/search.png";
+import googleicon from "../../../assets/img/search.png";
 
 const Login = () => {
   // const {

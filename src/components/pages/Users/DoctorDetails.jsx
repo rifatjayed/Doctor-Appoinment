@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { useParams } from "react-router";
-import doctorProImg from "../../assets/img/dctrpro.jpg";
+// import doctorProImg from "../../assets/img/dctrpro.jpg";
+import doctorProImg from "../../../assets/img/dctrpro.jpg";
+
 import { FaRegHospital, FaMapMarkerAlt, FaRegClock } from "react-icons/fa";
 
-import doctorList from "../../Data/db2";
+import doctorList from "../../../Data/db2";
 
 const DoctorDetails = () => {
   const [selected, setSelected] = useState("");

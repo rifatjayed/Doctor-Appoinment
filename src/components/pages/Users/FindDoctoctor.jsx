@@ -1,13 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 
-import doctorList from "../../Data/db2";
-import doctorProImg from "../../assets/img/dctrpro.jpg";
+// import doctors from "../../../Data/db2";
+// import doctorProImg from "../../assets/img/dctrpro.jpg";
+
+import doctorProImg from "../../../assets/img/dctrpro.jpg";
 
 import { useForm } from "react-hook-form";
 import { Link } from "react-router";
+import { DoctorContext } from "../../../Context/DoctorProvider";
 
 const FindDoctor = () => {
+  const { doctors, updateFilter, filters } = useContext(DoctorContext);
   const {
     register,
     handleSubmit,
@@ -15,9 +19,9 @@ const FindDoctor = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => console.log(data);
+  // const onSubmit = (data) => console.log(data);
 
-  console.log(watch("example"));
+  // console.log(watch("example"));
 
   const [searchTerm, setSearchTerm] = useState("");
   const [genderFilter, setGenderFilter] = useState("");
@@ -31,11 +35,8 @@ const FindDoctor = () => {
   // Pagination calculation
   const indexOfLastDoctor = currentPage * doctorsPerPage;
   const indexOfFirstDoctor = indexOfLastDoctor - doctorsPerPage;
-  const currentDoctors = doctorList.slice(
-    indexOfFirstDoctor,
-    indexOfLastDoctor
-  );
-  const totalPages = Math.ceil(doctorList.length / doctorsPerPage);
+  const currentDoctors = doctors.slice(indexOfFirstDoctor, indexOfLastDoctor);
+  const totalPages = Math.ceil(doctors.length / doctorsPerPage);
 
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
@@ -61,21 +62,21 @@ const FindDoctor = () => {
           {/* Filters Dropdowns */}
           <div className="flex flex-col sm:flex-row flex-wrap gap-4">
             <select
-              className="flex-1 min-w-[140px] px-4 py-2 rounded border border-gray-300"
-              value={genderFilter}
-              onChange={(e) => setGenderFilter(e.target.value)}
+              className="flex-1 min-w-[140px] px-4 py-2 rounded border border-gray-300  text-white"
+              onChange={(e) => updateFilter("gender", e.target.value)}
             >
               <option value="" className="">
                 All Gender
               </option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
             </select>
 
             <select
-              className="flex-1 min-w-[140px] px-4 py-2 rounded border border-gray-300"
+              className="flex-1 min-w-[140px] px-4 py-2 rounded border border-gray-300 text-white"
               value={specializationFilter}
-              onChange={(e) => setSpecializationFilter(e.target.value)}
+              placeholder="Specialization"
+              onChange={(e) => updateFilter("specialization", e.target.value)}
             >
               <option value="">All Specializations</option>
               <option value="Cardiology">Cardiology</option>
@@ -84,9 +85,10 @@ const FindDoctor = () => {
             </select>
 
             <select
-              className="flex-1 min-w-[140px] px-4 py-2 rounded border border-gray-300"
+              className="flex-1 min-w-[140px] px-4 py-2 rounded border border-gray-300 text-white"
               value={cityFilter}
-              onChange={(e) => setCityFilter(e.target.value)}
+              placeholder="City"
+              onChange={(e) => updateFilter("city", e.target.value)}
             >
               <option value="">All Cities</option>
               <option value="Dhaka">Dhaka</option>
@@ -94,15 +96,58 @@ const FindDoctor = () => {
             </select>
 
             <select
-              className="flex-1 min-w-[140px] px-4 py-2 rounded border border-gray-300"
+              className="flex-1 min-w-[140px] px-4 py-2 rounded border border-gray-300 text-white"
               value={consultationType}
-              onChange={(e) => setConsultationType(e.target.value)}
+              onChange={(e) => updateFilter("consultationType", e.target.value)}
             >
               <option value="">Any Consultation</option>
               <option value="face">Face to Face</option>
               <option value="video">Video/Audio</option>
             </select>
           </div>
+          {/* <div>
+            <div className="filters">
+              <select onChange={(e) => updateFilter("gender", e.target.value)}>
+                <option value="">All Genders</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>  
+              </select>
+
+              <input
+                type="text"
+                placeholder="Specialization"
+                onChange={(e) => updateFilter("specialization", e.target.value)}
+              />
+
+              <input
+                type="text"
+                placeholder="City"
+                onChange={(e) => updateFilter("city", e.target.value)}
+              />
+
+              <select
+                onChange={(e) =>
+                  updateFilter("consultationType", e.target.value)
+                }
+              >
+                <option value="">All Types</option>
+                <option value="face to face">Face to Face</option>
+                <option value="video call">Video Call</option>
+              </select>
+            </div>
+
+            <div className="doctor-list">
+              {doctors.map((doc) => (
+                <div key={doc.id}>
+                  <h2>{doc.name}</h2>
+                  <p>
+                    {doc.specialization} - {doc.gender}
+                  </p>
+                  <p>City: {doc.location}</p>
+                </div>
+              ))}
+            </div>
+          </div> */}
         </div>
       </div>
 
@@ -113,7 +158,7 @@ const FindDoctor = () => {
         </h3>
 
         {/* <div className="space-y-6">
-          {doctorList.map((doctor) => (
+          {doctors.map((doctor) => (
             <div key={doctor.id}>
               <div className="p-4 sm:p-6 md:p-8 lg:p-10 bg-white shadow-[5px_5px_10px_0px_rgba(0,_0,_0,_0.1)] rounded-lg">
                 <div className="flex flex-col sm:flex-row">
@@ -188,7 +233,7 @@ const FindDoctor = () => {
         {/* 
  new vhabeee */}
         <div className="space-y-6">
-          {currentDoctors.map((doctor) => (
+          {doctors.map((doctor) => (
             <div key={doctor.id}>
               <div className="p-4 sm:p-6 md:p-8 lg:p-10 bg-white shadow-[5px_5px_10px_0px_rgba(0,_0,_0,_0.1)] rounded-lg">
                 <div className="flex flex-col sm:flex-row">
