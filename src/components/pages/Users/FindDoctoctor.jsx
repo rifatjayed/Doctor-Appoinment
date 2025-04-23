@@ -32,6 +32,21 @@ const FindDoctor = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const doctorsPerPage = 6;
 
+  const specializations = [
+    ...new Set(
+      doctors
+        .map((doc) => doc.specialization)
+        .filter((spec) => spec && spec.trim() !== "")
+    ),
+  ];
+
+  // const cities = [
+  //   ...new Set(
+  //     doctors
+  //       .map((doc) => doc.location)
+  //       .filter((city) => city && city.trim() !== "")
+  //   ),
+  // ];
   // Pagination calculation
   const indexOfLastDoctor = currentPage * doctorsPerPage;
   const indexOfFirstDoctor = indexOfLastDoctor - doctorsPerPage;
@@ -72,7 +87,7 @@ const FindDoctor = () => {
               <option value="Female">Female</option>
             </select>
 
-            <select
+            {/* <select
               className="flex-1 min-w-[140px] px-4 py-2 rounded border border-gray-300 text-white"
               value={specializationFilter}
               placeholder="Specialization"
@@ -82,6 +97,18 @@ const FindDoctor = () => {
               <option value="Cardiology">Cardiology</option>
               <option value="Dermatology">Dermatology</option>
               <option value="Neurology">Neurology</option>
+            </select> */}
+            <select
+              className="flex-1 min-w-[140px] px-4 py-2 rounded border border-gray-300 text-white"
+              value={filters.specialization}
+              onChange={(e) => updateFilter("specialization", e.target.value)}
+            >
+              <option value="">All Specializations</option>
+              {specializations.map((spec) => (
+                <option key={spec} value={spec}>
+                  {spec}
+                </option>
+              ))}
             </select>
 
             <select
@@ -94,6 +121,19 @@ const FindDoctor = () => {
               <option value="Dhaka">Dhaka</option>
               <option value="Chattogram">Chattogram</option>
             </select>
+
+            {/* <select
+              className="flex-1 min-w-[140px] px-4 py-2 rounded border border-gray-300 text-black"
+              value={filters.city}
+              onChange={(e) => updateFilter("city", e.target.value)}
+            >
+              <option value="">All Cities</option>
+              {cities.map((city) => (
+                <option key={city} value={city}>
+                  {city}
+                </option>
+              ))}
+            </select> */}
 
             <select
               className="flex-1 min-w-[140px] px-4 py-2 rounded border border-gray-300 text-white"
