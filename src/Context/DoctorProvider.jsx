@@ -76,7 +76,7 @@ const DoctorProvider = ({ children }) => {
     }
 
     setFilteredDoctors(result);
-    // console.log(result);
+    console.log(result);
   }, [filters, doctors]);
 
   //   // ✅ Extract unique consultation types
