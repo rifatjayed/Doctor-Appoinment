@@ -11,7 +11,13 @@ import { Link } from "react-router";
 import { DoctorContext } from "../../../Context/DoctorProvider";
 
 const FindDoctor = () => {
-  const { doctors, updateFilter, filters } = useContext(DoctorContext);
+  const {
+    doctors,
+    updateFilter,
+    filters,
+    uniqueConsultationTypes,
+    uniqueCities,
+  } = useContext(DoctorContext);
   const {
     register,
     handleSubmit,
@@ -111,7 +117,7 @@ const FindDoctor = () => {
               ))}
             </select>
 
-            <select
+            {/* <select
               className="flex-1 min-w-[140px] px-4 py-2 rounded border border-gray-300 text-white"
               value={cityFilter}
               placeholder="City"
@@ -120,29 +126,33 @@ const FindDoctor = () => {
               <option value="">All Cities</option>
               <option value="Dhaka">Dhaka</option>
               <option value="Chattogram">Chattogram</option>
-            </select>
-
-            {/* <select
-              className="flex-1 min-w-[140px] px-4 py-2 rounded border border-gray-300 text-black"
-              value={filters.city}
-              onChange={(e) => updateFilter("city", e.target.value)}
-            >
-              <option value="">All Cities</option>
-              {cities.map((city) => (
-                <option key={city} value={city}>
-                  {city}
-                </option>
-              ))}
             </select> */}
 
             <select
+              name="city"
+              value={filters.city}
+              onChange={(e) => updateFilter("city", e.target.value)}
+              className="border rounded px-2 py-1 text-white"
+            >
+              <option value="">All Cities</option>
+              {uniqueCities.map((city, index) => (
+                <option key={index} value={city}>
+                  {city}
+                </option>
+              ))}
+            </select>
+
+            <select
               className="flex-1 min-w-[140px] px-4 py-2 rounded border border-gray-300 text-white"
-              value={consultationType}
+              value={filters.consultationType}
               onChange={(e) => updateFilter("consultationType", e.target.value)}
             >
-              <option value="">Any Consultation</option>
-              <option value="face">Face to Face</option>
-              <option value="video">Video/Audio</option>
+              <option value="">All Consultation Types</option>
+              {uniqueConsultationTypes.map((type) => (
+                <option key={type} value={type}>
+                  {type}
+                </option>
+              ))}
             </select>
           </div>
           {/* <div>
@@ -150,7 +160,7 @@ const FindDoctor = () => {
               <select onChange={(e) => updateFilter("gender", e.target.value)}>
                 <option value="">All Genders</option>
                 <option value="Male">Male</option>
-                <option value="Female">Female</option>  
+                <option value="Female">Female</option>
               </select>
 
               <input
@@ -202,7 +212,7 @@ const FindDoctor = () => {
             <div key={doctor.id}>
               <div className="p-4 sm:p-6 md:p-8 lg:p-10 bg-white shadow-[5px_5px_10px_0px_rgba(0,_0,_0,_0.1)] rounded-lg">
                 <div className="flex flex-col sm:flex-row">
-                
+
                   <div className="flex-shrink-0 flex justify-center sm:block mb-4 sm:mb-0">
                     <img
                       className="w-[80px] sm:w-[100px] h-auto object-cover rounded"
@@ -270,7 +280,7 @@ const FindDoctor = () => {
           ))}
         </div> */}
 
-        {/* 
+        {/*
  new vhabeee */}
         <div className="space-y-6">
           {doctors.map((doctor) => (

@@ -6,6 +6,7 @@ let doctorList = [
     degrees: ["MBBS", "MD (Dermatology)"],
     specialization: "Dermatologist",
     experience_years: 9,
+    consultation_type: ["Face to Face", "Video Call/ Audio Call"],
     bmdc_registration: "E567890",
     about:
       "Dr. Kamal Uddin is a board-certified dermatologist with a decade of experience in treating complex skin conditions. He is known for his personalized care and commitment to using modern dermatological techniques.",
@@ -61,6 +62,8 @@ let doctorList = [
     degrees: ["MBBS", "FCPS (Pediatrics)"],
     specialization: "Child Specialist",
     experience_years: 7,
+    consultation_type: ["Face to Face", "Video Call/ Audio Call"],
+
     bmdc_registration: "F678901",
     about:
       "Dr. Sabrina Haque is a dedicated pediatrician with a strong focus on child growth, nutrition, and preventive care. She brings warmth and expertise to every consultation.",
@@ -116,6 +119,8 @@ let doctorList = [
     degrees: ["MBBS", "MS (ENT)"],
     specialization: "ENT Specialist",
     experience_years: 13,
+    consultation_type: ["Face to Face"],
+
     bmdc_registration: "G789012",
     about:
       "Dr. Mahmudul Hasan is a leading ENT specialist renowned for his surgical precision and effective treatment of ear, nose, and throat disorders.",
@@ -171,6 +176,8 @@ let doctorList = [
     degrees: ["MBBS", "MD (Medicine)"],
     specialization: "Internal Medicine Specialist",
     experience_years: 14,
+    consultation_type: ["Face to Face"],
+
     bmdc_registration: "H890123",
     about:
       "Dr. Nilufa Begum is a highly experienced internal medicine specialist, providing comprehensive care for chronic illnesses and complex medical cases with compassion and excellence.",
@@ -226,6 +233,8 @@ let doctorList = [
     degrees: ["MBBS", "MD (Nephrology)"],
     specialization: "Kidney Specialist",
     experience_years: 12,
+    consultation_type: ["Video Call/ Audio Call"],
+
     bmdc_registration: "I901234",
     about:
       "Dr. Rafiqul Islam is an expert in nephrology with a special focus on chronic kidney diseases and dialysis. He is committed to improving the quality of life of his patients through advanced kidney care.",
@@ -281,6 +290,8 @@ let doctorList = [
     degrees: ["MBBS", "FCPS (Ophthalmology)"],
     specialization: "Eye Specialist",
     experience_years: 10,
+    consultation_type: ["Face to Face", "Video Call/ Audio Call"],
+
     bmdc_registration: "J012345",
     about:
       "Dr. Ruma Akter is a respected ophthalmologist specializing in vision correction, eye diseases, and cataract surgery. Her precise diagnostics and surgical skills make her a trusted name in eye care.",
@@ -336,6 +347,8 @@ let doctorList = [
     degrees: ["MBBS", "MD (Dermatology)"],
     specialization: "Dermatologist",
     experience_years: 9,
+    consultation_type: ["Face to Face", "Video Call/ Audio Call"],
+
     bmdc_registration: "E567890",
     about:
       "Dr. Kamal Uddin is a board-certified dermatologist with a decade of experience in treating complex skin conditions. He is known for his personalized care and commitment to using modern dermatological techniques.",
@@ -391,6 +404,8 @@ let doctorList = [
     degrees: ["MBBS", "FCPS (Pediatrics)"],
     specialization: "Child Specialist",
     experience_years: 7,
+    consultation_type: ["Face to Face", "Video Call/ Audio Call"],
+
     bmdc_registration: "F678901",
     about:
       "Dr. Sabrina Haque is a dedicated pediatrician with a strong focus on child growth, nutrition, and preventive care. She brings warmth and expertise to every consultation.",
@@ -446,6 +461,8 @@ let doctorList = [
     degrees: ["MBBS", "MS (ENT)"],
     specialization: "ENT Specialist",
     experience_years: 13,
+    consultation_type: ["Face to Face"],
+
     bmdc_registration: "G789012",
     about:
       "Dr. Mahmudul Hasan is a leading ENT specialist renowned for his surgical precision and effective treatment of ear, nose, and throat disorders.",
@@ -501,6 +518,8 @@ let doctorList = [
     degrees: ["MBBS", "MD (Medicine)"],
     specialization: "Internal Medicine Specialist",
     experience_years: 14,
+    consultation_type: ["Video Call/ Audio Call"],
+
     bmdc_registration: "H890123",
     about:
       "Dr. Nilufa Begum is a highly experienced internal medicine specialist, providing comprehensive care for chronic illnesses and complex medical cases with compassion and excellence.",
@@ -556,6 +575,8 @@ let doctorList = [
     degrees: ["MBBS", "MD (Nephrology)"],
     specialization: "Kidney Specialist",
     experience_years: 12,
+    consultation_type: ["Face to Face", "Video Call/ Audio Call"],
+
     bmdc_registration: "I901234",
     about:
       "Dr. Rafiqul Islam is an expert in nephrology with a special focus on chronic kidney diseases and dialysis. He is committed to improving the quality of life of his patients through advanced kidney care.",
