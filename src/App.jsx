@@ -12,6 +12,7 @@ import DoctorDetails from "./components/pages/Users/DoctorDetails";
 import FindHospital from "./components/pages/Users/FindHospital";
 import Profile from "./components/pages/Users/Profile";
 import AdminDashboard from "./components/pages/Admin/Dashboard";
+import Dashboard from "./components/pages/Users/Dashboard";
 
 const router = createBrowserRouter([
   {
@@ -73,11 +74,11 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/profile",
+    path: "/dashboard",
     element: (
       <>
         <Navbar></Navbar>
-        <Profile></Profile>
+        <Dashboard></Dashboard>
         <Footer></Footer>
       </>
     ),

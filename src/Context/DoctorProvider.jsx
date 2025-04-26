@@ -18,7 +18,7 @@ const DoctorProvider = ({ children }) => {
   });
 
   useEffect(() => {
-    console.log(doctorList);
+    // console.log(doctorList);
     setDoctors(doctorList);
     setFilteredDoctors(doctorList);
     setLoading(false);
@@ -71,7 +71,7 @@ const DoctorProvider = ({ children }) => {
     }
 
     setFilteredDoctors(result);
-    console.log(result);
+    // console.log(result);
   }, [filters, doctors]);
 
   const uniqueCities = [...new Set(doctors.map((doc) => doc.location))];

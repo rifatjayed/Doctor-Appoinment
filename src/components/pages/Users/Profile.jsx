@@ -1,183 +1,218 @@
-import { AiOutlineUser } from "react-icons/ai";
-import { Link } from "react-router";
-import React, { useState } from "react";
+import { useForm } from "react-hook-form";
+import { useState, useEffect } from "react";
 
 const Profile = () => {
-  const [activeMenu, setActiveMenu] = useState("Appointments");
+  const initialData = {
+    name: "Rahim Uddin",
+    email: "rahim@example.com",
+    phone: "01700000000",
+    address: "Dhaka, Bangladesh",
+    gender: "Male",
+    birthDate: "1995-06-15",
+  };
 
-  const menuItems = [
-    "Appointments",
-    "Medical Records",
-    "Lab Tests",
-    "Profile Settings",
-    "My Service Cart",
-    "My Requests",
-  ];
+  const [userData, setUserData] = useState(initialData);
+  const [isEditing, setIsEditing] = useState(false);
+  const [profilePic, setProfilePic] = useState(null);
 
-  const renderContent = () => {
-    switch (activeMenu) {
-      case "Appointments":
-        return <div>Your upcoming appointments will appear here.</div>;
-      case "Medical Records":
-        return <div>All your medical records in one place.</div>;
-      case "Lab Tests":
-        return <div>Here are your recent lab test results.</div>;
-      case "Profile Settings":
-        return <div>Update your profile and account settings here.</div>;
-      case "My Service Cart":
-        return <div>Items added to your cart for health services.</div>;
-      case "My Requests":
-        return <div>Track all your service requests here.</div>;
-      default:
-        return null;
+  const { register, handleSubmit, reset } = useForm({
+    defaultValues: userData,
+  });
+
+  useEffect(() => {
+    reset(userData);
+  }, [userData, reset]);
+
+  const onSubmit = (data) => {
+    console.log("Saved Data:", data);
+    setUserData(data);
+    setIsEditing(false);
+  };
+
+  const handleEdit = () => {
+    setIsEditing(true);
+  };
+
+  const handleCancel = () => {
+    reset(userData);
+    setIsEditing(false);
+  };
+
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setProfilePic(URL.createObjectURL(file));
     }
   };
+
   return (
-    // <div className="min-h-screen flex">
-    //   {/* Sidebar */}
-    //   <aside className="w-64 bg-[#f3f4f6] p-6 shadow-md">
-    //     <h2 className="text-xl font-bold mb-6">My Dashboard</h2>
-    //     <ul className="space-y-3">
-    //       {menuItems.map((item) => (
-    //         <li
-    //           key={item}
-    //           onClick={() => setActiveMenu(item)}
-    //           className={`cursor-pointer px-4 py-2 rounded-lg transition ${
-    //             activeMenu === item
-    //               ? "bg-blue-500 text-white"
-    //               : "hover:bg-gray-200"
-    //           }`}
-    //         >
-    //           {item}
-    //         </li>
-    //       ))}
-    //     </ul>
-    //   </aside>
-
-    //   {/* Main Content */}
-    //   <main className="flex-1 p-8">
-    //     <h3 className="text-2xl font-semibold mb-4">{activeMenu}</h3>
-    //     <div className="bg-white p-6 rounded-lg shadow-md">
-    //       {renderContent()}
-    //     </div>
-    //   </main>
-    // </div>
-    <div className="min-h-screen flex flex-col md:flex-row">
-      {/* Sidebar */}
-      <aside className="w-full md:w-64 bg-[#f3f4f6] p-4 md:p-6 shadow-md">
-        <div className="flex items-center gap-3 mb-4 md:mb-6">
-          <AiOutlineUser className="text-2xl text-blue-600" />
-          <div>
-            <h2 className="text-lg md:text-xl font-bold text-blue-700">
-              My Dashboard
-            </h2>
-            <p className="text-sm text-gray-600 hidden md:block">Rifat Jayed</p>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-100 flex items-center justify-center p-5">
+      <div className="bg-white shadow-2xl rounded-3xl p-8 w-full max-w-3xl">
+        <div className="flex flex-col items-center mb-8">
+          <div className="relative group">
+            <img
+              src={profilePic || "https://i.ibb.co/2t6YF7d/default-profile.jpg"}
+              alt="Profile"
+              className="w-36 h-36 rounded-full object-cover border-4 border-purple-400 shadow-md transition-transform duration-300 group-hover:scale-105"
+            />
+            {isEditing && (
+              <label className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center rounded-full cursor-pointer hover:bg-opacity-60">
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={handleImageChange}
+                  className="hidden"
+                />
+                <span className="text-white text-sm">Change</span>
+              </label>
+            )}
           </div>
-        </div>
-        <ul className="space-y-2 md:space-y-3">
-          {menuItems.map((item) => (
-            <li
-              key={item}
-              onClick={() => setActiveMenu(item)}
-              className={`cursor-pointer px-4 py-2 rounded-lg transition text-sm md:text-base ${
-                activeMenu === item
-                  ? "bg-blue-500 text-white"
-                  : "hover:bg-gray-200"
-              }`}
-            >
-              {item}
-            </li>
-          ))}
-        </ul>
-      </aside>
 
-      {/* Main Content */}
-      <main className="flex-1 p-4 md:p-8">
-        <h3 className="text-xl md:text-2xl font-semibold mb-4">{activeMenu}</h3>
-        <div className="bg-white p-4 md:p-6 rounded-lg shadow-md text-sm md:text-base">
-          {renderContent()}
+          <h2 className="text-3xl font-extrabold text-gray-700 mt-5">
+            My Profile
+          </h2>
+          <p className="text-gray-500">Manage your account info</p>
         </div>
-      </main>
+
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {/* Name */}
+            <div>
+              <label className="block mb-2 font-semibold text-gray-600">
+                Name
+              </label>
+              <input
+                type="text"
+                {...register("name")}
+                disabled={!isEditing}
+                className={`w-full p-3 rounded-xl border ${
+                  isEditing
+                    ? "bg-white border-purple-300 focus:border-purple-500"
+                    : "bg-gray-100 border-gray-200"
+                } transition`}
+              />
+            </div>
+
+            {/* Email */}
+            <div>
+              <label className="block mb-2 font-semibold text-gray-600">
+                Email
+              </label>
+              <input
+                type="email"
+                {...register("email")}
+                disabled={!isEditing}
+                className={`w-full p-3 rounded-xl border ${
+                  isEditing
+                    ? "bg-white border-purple-300 focus:border-purple-500"
+                    : "bg-gray-100 border-gray-200"
+                } transition`}
+              />
+            </div>
+
+            {/* Phone */}
+            <div>
+              <label className="block mb-2 font-semibold text-gray-600">
+                Phone
+              </label>
+              <input
+                type="text"
+                {...register("phone")}
+                disabled={!isEditing}
+                className={`w-full p-3 rounded-xl border ${
+                  isEditing
+                    ? "bg-white border-purple-300 focus:border-purple-500"
+                    : "bg-gray-100 border-gray-200"
+                } transition`}
+              />
+            </div>
+
+            {/* Address */}
+            <div>
+              <label className="block mb-2 font-semibold text-gray-600">
+                Address
+              </label>
+              <input
+                type="text"
+                {...register("address")}
+                disabled={!isEditing}
+                className={`w-full p-3 rounded-xl border ${
+                  isEditing
+                    ? "bg-white border-purple-300 focus:border-purple-500"
+                    : "bg-gray-100 border-gray-200"
+                } transition`}
+              />
+            </div>
+
+            {/* Gender */}
+            <div>
+              <label className="block mb-2 font-semibold text-gray-600">
+                Gender
+              </label>
+              <select
+                {...register("gender")}
+                disabled={!isEditing}
+                className={`w-full p-3 rounded-xl border ${
+                  isEditing
+                    ? "bg-white border-purple-300 focus:border-purple-500"
+                    : "bg-gray-100 border-gray-200"
+                } transition`}
+              >
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            {/* Birth Date */}
+            <div>
+              <label className="block mb-2 font-semibold text-gray-600">
+                Birth Date
+              </label>
+              <input
+                type="date"
+                {...register("birthDate")}
+                disabled={!isEditing}
+                className={`w-full p-3 rounded-xl border ${
+                  isEditing
+                    ? "bg-white border-purple-300 focus:border-purple-500"
+                    : "bg-gray-100 border-gray-200"
+                } transition`}
+              />
+            </div>
+          </div>
+
+          <div className="flex justify-center gap-6 mt-8">
+            {isEditing ? (
+              <>
+                <button
+                  type="submit"
+                  className="bg-gradient-to-r from-purple-500 to-indigo-500 text-white px-6 py-3 rounded-full font-semibold hover:from-purple-600 hover:to-indigo-600 transition"
+                >
+                  Save
+                </button>
+                <button
+                  type="button"
+                  onClick={handleCancel}
+                  className="bg-gray-400 text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-500 transition"
+                >
+                  Cancel
+                </button>
+              </>
+            ) : (
+              <button
+                type="button"
+                onClick={handleEdit}
+                className="bg-gradient-to-r from-green-400 to-green-600 text-white px-8 py-3 rounded-full font-semibold hover:from-green-500 hover:to-green-700 transition"
+              >
+                Edit Profile
+              </button>
+            )}
+          </div>
+        </form>
+      </div>
     </div>
   );
 };
 
 export default Profile;
-
-// import { AiOutlineUser } from "react-icons/ai";
-// import React, { useState } from "react";
-// import { Link } from "react-router-dom"; // ✅ ঠিক import
-
-// const Profile = () => {
-//   const [activeMenu, setActiveMenu] = useState("Appointments");
-
-//   const menuItems = [
-//     "Appointments",
-//     "Medical Records",
-//     "Lab Tests",
-//     "Profile Settings",
-//     "My Service Cart",
-//     "My Requests",
-//   ];
-
-//   const renderContent = () => {
-//     switch (activeMenu) {
-//       case "Appointments":
-//         return <div>Your upcoming appointments will appear here.</div>;
-//       case "Medical Records":
-//         return <div>All your medical records in one place.</div>;
-//       case "Lab Tests":
-//         return <div>Here are your recent lab test results.</div>;
-//       case "Profile Settings":
-//         return <div>Update your profile and account settings here.</div>;
-//       case "My Service Cart":
-//         return <div>Items added to your cart for health services.</div>;
-//       case "My Requests":
-//         return <div>Track all your service requests here.</div>;
-//       default:
-//         return null;
-//     }
-//   };
-
-//   return (
-//     <div className="min-h-screen flex flex-col md:flex-row">
-//       {/* Sidebar */}
-//       <aside className="w-full md:w-64 bg-[#f3f4f6] p-4 md:p-6 shadow-md">
-//         <div className="flex items-center gap-3 mb-4 md:mb-6">
-//           <AiOutlineUser className="text-2xl text-blue-600" />
-//           <div>
-//             <h2 className="text-lg md:text-xl font-bold text-blue-700">
-//               My Dashboard
-//             </h2>
-//             <p className="text-sm text-gray-600 hidden md:block">Rifat Jayed</p>
-//           </div>
-//         </div>
-//         <ul className="space-y-2 md:space-y-3">
-//           {menuItems.map((item) => (
-//             <li
-//               key={item}
-//               onClick={() => setActiveMenu(item)}
-//               className={`cursor-pointer px-4 py-2 rounded-lg transition text-sm md:text-base ${
-//                 activeMenu === item
-//                   ? "bg-blue-500 text-white"
-//                   : "hover:bg-gray-200"
-//               }`}
-//             >
-//               {item}
-//             </li>
-//           ))}
-//         </ul>
-//       </aside>
-
-//       {/* Main Content */}
-//       <main className="flex-1 p-4 md:p-8">
-//         <h3 className="text-xl md:text-2xl font-semibold mb-4">{activeMenu}</h3>
-//         <div className="bg-white p-4 md:p-6 rounded-lg shadow-md text-sm md:text-base">
-//           {renderContent()}
-//         </div>
-//       </main>
-//     </div>
-//   );
-// };
-
-// export default Profile;
