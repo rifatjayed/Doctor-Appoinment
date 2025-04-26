@@ -282,7 +282,7 @@ const FindDoctor = () => {
                   </div>
                   <div className="sm:ml-6 text-center sm:text-left">
                     <Link
-                      to={`/doctor/${doctor._id}`}
+                      to={`/doctor/${doctor.id}`}
                       className=" text-lg font-semibold text-gray-800 hover:text-blue-600"
                     >
                       {doctor.name}
