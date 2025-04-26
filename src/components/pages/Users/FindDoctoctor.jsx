@@ -31,11 +31,11 @@ const FindDoctor = () => {
 
   // console.log(watch("example"));
 
-  const [searchTerm, setSearchTerm] = useState("");
-  const [genderFilter, setGenderFilter] = useState("");
-  const [specializationFilter, setSpecializationFilter] = useState("");
-  const [cityFilter, setCityFilter] = useState("");
-  const [consultationType, setConsultationType] = useState("");
+  // const [searchTerm, setSearchTerm] = useState("");
+  // const [genderFilter, setGenderFilter] = useState("");
+  // const [specializationFilter, setSpecializationFilter] = useState("");
+  // const [cityFilter, setCityFilter] = useState("");
+  // const [consultationType, setConsultationType] = useState("");
 
   const [currentPage, setCurrentPage] = useState(1);
   const doctorsPerPage = 6;
@@ -83,8 +83,8 @@ const FindDoctor = () => {
               <option value="" className="">
                 All Gender
               </option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
             </select>
 
             {/* <select
@@ -104,7 +104,7 @@ const FindDoctor = () => {
               onChange={(e) =>
                 setFilters({ ...filters, specialization: e.target.value })
               }
-              className="p-2 border rounded"
+              className="p-2 border rounded text-white"
             >
               <option value="">All Specializations</option>
               {uniqueSpecializations.map((specialization) => (
@@ -288,7 +288,7 @@ const FindDoctor = () => {
                       {doctor.name}
                     </Link>
                     <h3 className="text-sm text-gray-600">
-                      {doctor.degree.join(", ")}
+                      {doctor.degrees.join(", ")}
                     </h3>
                     <h3 className="text-sm text-gray-600">
                       {doctor.specialization}

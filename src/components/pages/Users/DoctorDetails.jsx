@@ -59,7 +59,7 @@ const DoctorDetails = () => {
 
   const { id } = useParams();
   console.log(id);
-  const doctor = doctors.find((doc) => doc._id === id);
+  const doctor = doctors.find((doc) => doc.id === id);
   if (!doctor)
     return <p className="text-center text-red-600 mt-10">Doctor not found</p>;
 
@@ -79,7 +79,7 @@ const DoctorDetails = () => {
                 {doctor.name}
               </h3>
               <h4 className="text-sm text-gray-600">
-                {doctor.degree.join(", ")}
+                {doctor.degrees.join(", ")}
               </h4>
               <h4 className="text-sm text-gray-600">{doctor.specialization}</h4>
               <h4 className="text-sm text-gray-600">
@@ -182,7 +182,7 @@ const DoctorDetails = () => {
               <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
                 {doctor.education.map((edu, index) => (
                   <li key={index}>
-                    <span className="font-medium">{edu.degree}</span>
+                    <span className="font-medium">{edu.degrees}</span>
                     <span className="font-medium">{edu.institution}</span>
                     <span className="font-medium">{edu.year}</span>
                   </li>

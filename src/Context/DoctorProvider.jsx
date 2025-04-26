@@ -18,27 +18,28 @@ const DoctorProvider = ({ children }) => {
   });
 
   useEffect(() => {
-    // console.log(doctorList);
-    // setDoctors(doctorList);
-    // setFilteredDoctors(doctorList);
-    // setLoading(false);
-    // return;
-    // console.log("helllo");
-    fetch("https://appointment-backend-steel.vercel.app/doctors/")
-      .then((response) => {
-        if (!response.ok) throw new Error("Failed to fetch doctors");
-        // console.log("from context", response.json());
-        return response.json();
-      })
-      .then((data) => {
-        setLoading(false);
-        setDoctors(data.data || []);
-        setFilteredDoctors(data.data || []);
-      })
-      .catch((err) => {
-        setError(err.message);
-        setLoading(false);
-      });
+    console.log(doctorList);
+    setDoctors(doctorList);
+    setFilteredDoctors(doctorList);
+    setLoading(false);
+    return;
+
+    // fetch("https://appointment-backend-steel.vercel.app/doctors/")
+    // fetch()
+    //   .then((response) => {
+    //     if (!response.ok) throw new Error("Failed to fetch doctors");
+    //     // console.log("from context", response.json());
+    //     return response.json();
+    //   })
+    //   .then((data) => {
+    //     setLoading(false);
+    //     setDoctors(data.data || []);
+    //     setFilteredDoctors(data.data || []);
+    //   })
+    //   .catch((err) => {
+    //     setError(err.message);
+    //     setLoading(false);
+    //   });
   }, []);
 
   // Filter logic
@@ -63,12 +64,6 @@ const DoctorProvider = ({ children }) => {
       );
     }
 
-    // if (filters.consultationType) {
-    //   result = result.filter((doc) =>
-    //     doc.consultation_type?.includes(filters.consultationType)
-    //   );
-    // }
-
     if (filters.consultationType) {
       result = result.filter((doc) =>
         doc.consultation_type?.includes(filters.consultationType)
@@ -78,14 +73,6 @@ const DoctorProvider = ({ children }) => {
     setFilteredDoctors(result);
     console.log(result);
   }, [filters, doctors]);
-
-  //   // ✅ Extract unique consultation types
-  // const uniqueConsultationTypes = Array.from(
-  //   new Set(doctors.flatMap((doc) => doc.consultation_type || []))
-  // );
-
-  // // ✅ Extract unique cities
-  // const uniqueCities = Array.from(new Set(doctors.map((doc) => doc.location)));
 
   const uniqueCities = [...new Set(doctors.map((doc) => doc.location))];
   const uniqueConsultationTypes = [
