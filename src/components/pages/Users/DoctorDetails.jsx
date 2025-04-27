@@ -7,14 +7,15 @@ import { FaRegHospital, FaMapMarkerAlt, FaRegClock } from "react-icons/fa";
 
 // import doctorList from "../../../Data/db2";
 import { DoctorContext } from "../../../Context/DoctorProvider";
+import { AuthContext } from "../../../Context/AuthProvider";
 
 const DoctorDetails = () => {
   const [selected, setSelected] = useState("");
   const [appointment, setAppointment] = useState("");
   const [showModal, setShowModal] = useState(false);
-
+  const [showLoginModal, setShowLoginModal] = useState(false);
   const { doctors } = useContext(DoctorContext);
-
+  const { user } = useContext(AuthContext);
   // new
   const [selectedLocationIndex, setSelectedLocationIndex] = useState(null);
   const [locationSelected, setLocationSelected] = useState(false);
@@ -41,6 +42,21 @@ const DoctorDetails = () => {
     !locationSelected || !consultationSelected || !appointmentSelected;
 
   const handleConfirm = () => {
+    // if (
+    //   selectedLocationIndex === null ||
+    //   selected === "" ||
+    //   appointment === ""
+    // ) {
+    //   console.log("Please select all fields");
+    //   return;
+    // }
+
+    if (!user) {
+      // If the user is not logged in, show login modal
+      setShowLoginModal(true);
+      return;
+    }
+
     if (
       selectedLocationIndex === null ||
       selected === "" ||
@@ -53,6 +69,8 @@ const DoctorDetails = () => {
     console.log("✅ User Selection:");
     console.log("Chamber:", doctor.chamber[selectedLocationIndex]);
     console.log("Consultation Type:", selected);
+    console.log("user.email:", user.email);
+    console.log("user.displayName:", user.displayName);
     console.log("Appointment Type:", appointment);
     setShowModal(true);
   };
@@ -293,7 +311,7 @@ const DoctorDetails = () => {
 
           <button
             onClick={handleConfirm}
-            className={`mt-5 w-full px-4 py-3 text-base font-medium text-white duration-300 
+            className={`mt-5 w-full px-4 py-3 text-base font-medium text-white duration-300
     ${
       isButtonDisabled
         ? "bg-[rgb(185_185_185)] cursor-not-allowed"
@@ -321,6 +339,25 @@ const DoctorDetails = () => {
             </div>
           </div>
         )} */}
+        {/* Login Modal */}
+        {showLoginModal && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+            <div className="bg-white rounded-xl p-6 w-[90%] max-w-md text-center shadow-lg">
+              <h2 className="text-xl font-semibold text-red-600 mb-2">
+                Please Log in First
+              </h2>
+              <p className="text-gray-700 mb-4">
+                You need to be logged in to submit the appointment request.
+              </p>
+              <button
+                onClick={() => setShowLoginModal(false)}
+                className="mt-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        )}
         {showModal && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
             <div className="bg-white rounded-xl p-6 w-[90%] max-w-md text-center shadow-lg">
